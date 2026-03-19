@@ -1,0 +1,2049 @@
+
+function ShowMyAccordDiv() {
+    // Close all other Acord Div if ShowOnlyMeAccord class is applied
+    if ($(".PersonDet .accordion-section").hasClass("ShowOnlyMeAccord")) {
+        $(".PersonDet .accordion-section .accordion-section-title").removeClass("active");
+        $(".PersonDet .accordion-section .accordion-section-content").removeClass("open");
+        $(".PersonDet .accordion-section .accordion-section-content").css("display", "none");
+        $(".ShowOnlyMeAccord .accordion-section-title").addClass("active");
+        $(".ShowOnlyMeAccord .accordion-section-content").addClass("open");
+        $(".ShowOnlyMeAccord .accordion-section-content").css("display", "block");
+    }
+}
+
+function fnShowFundPopup(objVal) {
+    if (objVal == '10001') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10001']").removeClass("DN");
+    }
+    else if (objVal == '10002') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10002']").removeClass("DN");
+    }
+    else if (objVal == '10003') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10003']").removeClass("DN");
+    }
+    else if (objVal == '10004') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10004']").removeClass("DN");
+    }
+    else if (objVal == '10005') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10005']").removeClass("DN");
+    }
+    else if (objVal == '10006') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10006']").removeClass("DN");
+    }
+    else if (objVal == '10007') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10007']").removeClass("DN");
+    }
+    else if (objVal == '10008') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10008']").removeClass("DN");
+    }
+    else if (objVal == '10009') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10009']").removeClass("DN");
+    }
+    else if (objVal == '10010') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10010']").removeClass("DN");
+    }
+    else if (objVal == '10011') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10011']").removeClass("DN");
+    }
+    else if (objVal == '10012') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10012']").removeClass("DN");
+    }
+    else if (objVal == '10018') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10018']").removeClass("DN");
+    }
+    else if (objVal == '10019') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10019']").removeClass("DN");
+    }
+    else if (objVal == '10020') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10020']").removeClass("DN");
+    }
+    else if (objVal == '10021') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10021']").removeClass("DN");
+    }
+    else if (objVal == '10022') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10022']").removeClass("DN");
+    }
+    else if (objVal == '10024') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10024']").removeClass("DN");
+    }
+    else if (objVal == '10015') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10015']").removeClass("DN");
+    }
+    else if (objVal == '10016') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10016']").removeClass("DN");
+    }
+    else if (objVal == '10017') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10017']").removeClass("DN");
+    }
+    else if (objVal == '10025') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10025']").removeClass("DN");
+    }
+    else if (objVal == '10027') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10027']").removeClass("DN");
+    }
+    else if (objVal == '10028') {
+        $(".FundDetlPopup p").addClass("DN");
+        $(".FundDetlPopup .modal-body p[data-value='10028']").removeClass("DN");
+    }
+}
+
+//Suitable analysis DigitalSaff form
+$(".Ques1Div .MultiSelectBtn").click(function () {
+    $(".Ques1Div .MultiSelectBtn").removeClass("ActiveBtn");
+    //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+    $(this).addClass("ActiveBtn");
+
+});
+$(".Ques2Div .MultiSelectBtn").click(function () {
+    $(".Ques2Div .MultiSelectBtn").removeClass("ActiveBtn");
+    //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+    $(this).addClass("ActiveBtn");
+
+});
+$(".Ques4Div .MultiSelectBtn").click(function () {
+    $(".Ques4Div .MultiSelectBtn").removeClass("ActiveBtn");
+    //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+    $(this).addClass("ActiveBtn");
+
+});
+$(".Ques5Div .MultiSelectBtn").click(function () {
+    $(".Ques5Div .MultiSelectBtn").removeClass("ActiveBtn");
+    //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+    $(this).addClass("ActiveBtn");
+
+});
+$(".Ques6Div .MultiSelectBtn").click(function () {
+    $(".Ques6Div .MultiSelectBtn").removeClass("ActiveBtn");
+    //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+    $(this).addClass("ActiveBtn");
+
+});
+$(".Ques7Div .MultiSelectBtn").click(function () {
+    $(".Ques7Div .MultiSelectBtn").removeClass("ActiveBtn");
+    //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+    $(this).addClass("ActiveBtn");
+
+});
+
+$(document).ready(function () {
+    //for SI patment methods
+    $(".selectSImethod_optn").click(function () {
+        $(".selectSImethod_optn").removeClass("selectSImethod_optn_Active");
+        $(this).addClass("selectSImethod_optn_Active");
+    });
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///// NEW DESIGN SCRIPT STARTS FROM HERE
+    ///// AS ON 17012025 BY NITINJ
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //for Header menu active 
+    //To Show/Hide main menu on page scroll
+    $(".HeaderMenu .navbar-nav").hide();
+    var menuMedia = window.matchMedia("(min-width: 768px)")
+    mainMenu(menuMedia)
+    menuMedia.addListener(mainMenu)
+    function mainMenu(menuMedia) {
+        if (menuMedia.matches) {
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+
+                if (scroll >= 80) {
+                    $(".HeaderMenu .navbar-nav").show();
+                }
+                else {
+                    $(".HeaderMenu .navbar-nav").hide();
+                }
+            });
+        }
+    }
+
+    $(".HeaderMenu .nav-link").click(function () {
+        $(".HeaderMenu .nav-link").removeClass("active");
+        $(this).addClass("active");
+    })
+    $(".navbar-toggler").click(function () {
+        $(this).parents(".HeaderMenu").toggleClass("MenuActive");
+        if ($(".HeaderMenu").hasClass("MenuActive")) {
+            $("body").css("overflow", "hidden");
+        } else {
+            $("body").css("overflow", "visible");
+        }
+    })
+
+    //to show/hide fixed footer on PrdtSelect page
+    $(".GetPremium_FooterHead").click(function () {
+        $(".GetPremium_FooterCntnt").toggle();
+        $(".GetPremium_FooterHead .fa").toggleClass("fa-angle-down").toggleClass("fa-angle-up");
+    });
+    //to change the fixed footer place in mobile
+    if ($(window).width() <= 767) {
+        $(".PlanSelectPg .FixedFooter").insertBefore($(".WhatIsPlan_Sect_new"));
+    }
+
+    //to add class to input field and green border if it has value
+    $('.InputDiv > input, .InputDiv > .YourNameRow input, .InputDiv > .YourEmailRow input, .InputDivNoLabel input').each(function () {
+        let val = $(this).val().trim();
+        if (val !== '' && val !== '0') {
+            $(this).closest('.InputDiv').addClass('inputFilled');
+            $(this).closest('.InputDivNoLabel').addClass('inputFilled');
+
+            if ($(this).parents(".InputDiv").find(".YourNameRow").hasClass("YourNameRow")) {
+                $(this).closest('.InputDiv').removeClass('inputFilled');
+                $(this).closest(".YourNameRow").addClass('inputFilled');
+            }
+
+            if ($(this).parents(".InputDiv").find(".YourEmailRow").hasClass("YourEmailRow")) {
+                $(this).closest('.InputDiv').removeClass('inputFilled');
+                $(this).closest(".YourEmailRow").addClass('inputFilled');
+            }
+        }
+    });
+    $('.InputDiv > input, .InputDiv > .YourNameRow input, .InputDiv > .YourEmailRow input, .InputDivNoLabel input').on('input', function () {
+        let val = $(this).val().trim();
+        if (val !== '' && val !== '0') {
+            $(this).closest('.InputDiv').addClass('inputFilled');
+            $(this).closest('.InputDivNoLabel').addClass('inputFilled');
+
+            if ($(this).parents(".InputDiv").find(".YourNameRow").hasClass("YourNameRow")) {
+                $(this).closest('.InputDiv').removeClass('inputFilled');
+                $(this).closest(".YourNameRow").addClass('inputFilled');
+            }
+
+            if ($(this).parents(".InputDiv").find(".YourEmailRow").hasClass("YourEmailRow")) {
+                $(this).closest('.InputDiv').removeClass('inputFilled');
+                $(this).closest(".YourEmailRow").addClass('inputFilled');
+            }
+
+        } else {
+            $(this).closest('.InputDiv').removeClass('inputFilled');
+            $(this).closest('.InputDivNoLabel').removeClass('inputFilled');
+            $(this).closest(".YourNameRow").removeClass('inputFilled');
+            $(this).closest(".YourEmailRow").removeClass('inputFilled');
+        }
+    });
+
+
+    $('.BrdrLabelInpDiv input').each(function () {
+        let val = $(this).val().trim();
+        if (val !== '' && val !== '0') {
+            $(this).closest('.BrdrLabelInpDiv').addClass('inputFilled');
+        }
+    });
+    $('.BrdrLabelInpDiv input').on('input', function () {
+        let val = $(this).val().trim();
+        if (val !== '' && val !== '0') {
+            $(this).closest('.BrdrLabelInpDiv').addClass('inputFilled');
+        } else {
+            $(this).closest('.BrdrLabelInpDiv').removeClass('inputFilled');
+        }
+    });
+
+    // for dropdown
+    $('.BrdrLabelInpDiv .InputField .CustSelect__trigger span, .CustSelectMainDiv .CustSelect__trigger span').each(function () {
+        let text = $(this).text().trim().toLowerCase();
+        let $trigger = $(this).closest('.CustSelect__trigger');
+        let $brdrDiv = $trigger.closest('.BrdrLabelInpDiv');
+        let $mainDiv = $trigger.closest('.CustSelectMainDiv');
+
+        if (text !== '' && !text.includes('select')) {
+            if ($brdrDiv.length) {
+                $brdrDiv.addClass('inputFilled');
+            } else if ($mainDiv.length) {
+                $mainDiv.addClass('inputFilled');
+            }
+        }
+    });
+    $('.BrdrLabelInpDiv .InputField .CustSelectInDiv').on('click', function () {
+        let span = $(this).find('span');
+        setTimeout(() => { // Delay to wait for content update
+            if (span.text().trim() !== '') {
+                span.parents('.BrdrLabelInpDiv').addClass('inputFilled');
+            } else {
+                span.parents('.BrdrLabelInpDiv').removeClass('inputFilled');
+            }
+        }, 10);
+    });
+    $('.CustSelectMainDiv .CustSelectInDiv').on('click', function () {
+        let $span = $(this).find('span');
+        let $mainDiv = $(this).closest('.CustSelectMainDiv');
+        setTimeout(() => { // Delay to wait for content update
+            let text = $span.text().trim().toLowerCase();
+
+            if (text !== '' && !text.includes('select')) {
+                if ($mainDiv.length) {
+                    $mainDiv.addClass('inputFilled');
+                }
+            }
+        }, 10);
+    });
+
+    //$('.BrdrLabelInpDiv .InputField .CustSelectInDiv').on('focus', function () {
+    //    let span = $(this).find('span');
+    //    setTimeout(() => { // Delay to wait for content update
+    //        if (span.text().trim() !== '') {
+    //            span.parents('.BrdrLabelInpDiv').addClass('inputFilled');
+    //        } else {
+    //            span.parents('.BrdrLabelInpDiv').removeClass('inputFilled');
+    //        }
+    //    }, 10);
+    //});
+
+    //for Why Choose SUD Life scroll
+    function enableDragScroll(element) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        element.addEventListener('mousedown', (e) => {
+            isDown = true;
+            element.classList.add('active');
+            startX = e.pageX - element.offsetLeft;
+            scrollLeft = element.scrollLeft;
+        });
+
+        element.addEventListener('mouseleave', () => {
+            isDown = false;
+            element.classList.remove('active');
+        });
+
+        element.addEventListener('mouseup', () => {
+            isDown = false;
+            element.classList.remove('active');
+        });
+
+        element.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - element.offsetLeft;
+            const walk = (x - startX) * 2; // Speed factor
+            element.scrollLeft = scrollLeft - walk;
+        });
+    }
+
+    // Apply to the scrollable container
+
+    const scrollContainer = document.querySelector(".WSL_Cntnr"); // Change to your element
+    if (scrollContainer) {
+        enableDragScroll(scrollContainer);
+    }
+
+
+    //on plan tab click add active class to itself and its respective content div
+    //$('.PlanTabBox_new').on('click', function () {
+    //    $('.PlanTabBox_new').removeClass('active');
+    //    $(this).addClass('active');
+    //});
+    $('.PlanTabBox_new, .nav-link').on('click', function () {
+        var isCard = $(this).hasClass('PlanTabBox_new');
+
+        if (isCard) {
+            // Get the id of the clicked card
+            var cardId = $(this).attr('id');
+            // Find the corresponding nav-link id
+            var contentId = cardId.replace('PTBN', 'menuLink');
+        } else {
+            // Get the id of the clicked nav-link
+            var contentId = $(this).attr('id');
+            // Find the corresponding card id
+            var cardId = contentId.replace('menuLink', 'PTBN');
+        }
+
+        // Remove active class from all link cards and content boxes
+        $('.PlanTabBox_new, .nav-link').removeClass('active');
+
+        // Add active class to clicked element and its counterpart
+        $('#' + cardId).addClass('active');
+        $('#' + contentId).addClass('active');
+    });
+
+
+    //on plan product box click add active class to itself and its respective content div
+    $('.PrdtPlanBox').on('click', function () {
+        // Get the id of the clicked card
+        var cardId = $(this).attr('id');
+
+        // Find the corresponding content box id
+        var contentId = cardId.replace('PPB', 'PPBC');
+
+        // Remove the active class from all link cards and content boxes
+        $('.PrdtPlanBox').removeClass('active');
+        $('.PrdtPlanBoxCntntSect').removeClass('active');
+
+        // Add the active class to the clicked card and its corresponding content box
+        $(this).addClass('active');
+        $('#' + contentId).addClass('active');
+    });
+
+    $(".HideEligCrit_Table").click(function () {
+        $(this).text($(this).text() === "Show Eligibility Criteria" ? "Hide Eligibility Criteria" : "Show Eligibility Criteria");
+        $(".EligiblityCriteria_table").toggle();
+        if ($(window).width() <= 767) {
+            $(".EligiblityCriteria_Accord").toggle();
+        }
+    });
+
+    //var myTestSwiper = new Swiper('.TestimonialSwiper', {
+    //    autoplay: false,
+    //    speed: 3000,
+    //    spaceBetween: 15,
+    //    slidesPerView: 'auto',
+    //    // If we need pagination
+    //    pagination: '.swiper-pagination',
+
+    //    // Navigation arrows
+    //    nextButton: '.swiper-button-next',
+    //    prevButton: '.swiper-button-prev',
+    //});
+
+    // FAQs Tab
+    $('.faqtab').on('click', function () {
+        // Get the id of the clicked card
+        var cardId = $(this).attr('id');
+
+        // Find the corresponding content box id
+        var contentId = cardId.replace('Faqtab', 'Faqpane');
+
+        // Remove the active class from all link cards and content boxes
+        $('.faqtab').removeClass('active');
+        $('.faqtab_Cntn').removeClass('active show');
+
+        // Add the active class to the clicked card and its corresponding content box
+        $(this).addClass('active');
+        $('#' + contentId).addClass('active show');
+    });
+
+    if ($(window).width() <= 767) {
+        $(".faqtab_Cntn.tab-pane").click(function () {
+
+            let isActive = $(this).hasClass("active");
+
+            $(".faqtab_Cntn.tab-pane").removeClass("active show");
+            $(".faqtab_Cntn.tab-pane .collapse").removeClass("show");
+
+            if (!isActive) {
+                $(this).addClass("active show");
+                $(this).children(".collapse").addClass("show");
+            }
+
+        });
+    }
+
+
+    $(".ExpandingBox a").click(function () {
+        $(".ExpandingBox").removeClass("ExpandingBox_Active");
+        $(this).parents(".ExpandingBox").addClass("ExpandingBox_Active");
+
+
+        //to open the details of Expanding Box in popup and close
+        //if ($(".ExpandingBox").hasClass("ExpandingBox_Active")) {
+        //    $("body").css({ "overflow": "hidden" });
+        //}
+
+    });
+    $(".ExpandingBox i").click(function () {
+        $(this).parents(".ExpandingBox").removeClass("ExpandingBox_Active");
+
+        //$("body").css({ "overflow": "visible" });
+    });
+
+    //to change position of image div in mobile
+    if ($(window).width() <= 767) {
+        $(".PlanImg_new").insertAfter($(".MainPrdtBoxCntnr"));
+
+        let scrollPosition = 0;
+        $(".ExpandingBox a").click(function () {
+            scrollPosition = $(window).scrollTop();
+            $("body").css({ position: "fixed", top: `-${scrollPosition}px`, left: "0px", right: "0px", height: "auto", });
+        });
+        $(".ExpandingToPopupBox_mobile .CloseBtn_Popup, .ExpandingToPopupBox_mobile .RedFilled_btn").click(function () {
+
+            $(this).parents(".ExpandingBox").removeClass("ExpandingBox_Active");
+            $("body").css({ position: "", top: "", left: "", right: "", height: "", });
+            $(window).scrollTop(scrollPosition);
+        });
+    }
+
+
+    // for QuickLink
+    $(".QuickLinks_Icon").click(function () {
+        $(".QuickLink_Box").toggle();
+        $(".QuickLinks_Icon img").toggleClass("DN");
+    })
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///// NEW DESIGN SCRIPT ENDS HERE
+    ///// AS ON 17012025 BY NITINJ
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    //for BreadCrumb Menu
+    $(".Breadcrumb_Menu .MenuIcon").click(function () {
+        $(this).toggleClass("MenuActive");
+        if ($(this).hasClass("MenuActive")) {
+            $(this).removeClass("fa-bars").addClass("fa-times");
+        } else {
+            $(this).removeClass("fa-times").addClass("fa-bars");
+        }
+
+    });
+
+    // to show input field on Yes option checked in Discount box
+    $("#SudPolicyNumb").hide();
+    $('.DiscountRow .CustRadioBtn input[type="radio"]').on('change', function () {
+        const $discountRow = $(this).closest('.DiscountRow');
+        const $firstBtn = $discountRow.find('.CustRadioBtn:first-child');
+        const $policyInput = $discountRow.find('#SudPolicyNumb');
+
+        if ($firstBtn.find('input[type="radio"]').is(':checked')) {
+            $firstBtn.addClass('YesActive');
+            $policyInput.show();
+        } else {
+            $firstBtn.removeClass('YesActive');
+            $policyInput.hide();
+        }
+    });
+    //cardsShowhideevent
+    $(".bluebottmArrw").click(function () {
+        $(this).parents(".Card").toggleClass("Cardexpand");
+    });
+    //ResumeApplication
+    $(".Recomend_AllPrdt_Tabs button").click(function () {
+        $(".Recomend_AllPrdt_Tabs button").removeClass("TabActive");
+        $(this).addClass("TabActive");
+
+        if ($("#EmailId_Btn").hasClass("TabActive")) {
+            $("#txtQuatAppNo").val("");
+            $("#email").removeClass("DN");
+            $("#APPNO").addClass("DN");
+        }
+        if ($("#ApplNo_Btn").hasClass("TabActive")) {
+            $("#txtQuatEmail").val("");
+            $("#APPNO").removeClass("DN");
+            $("#email").addClass("DN");
+        }
+    });
+
+    // to disable input if LockMe class is add
+    if ($("DIV").hasClass("LockMe")) {
+        $("DIV input").attr('readonly', true);
+        $("DIV input").attr("tabindex", "-1");
+    }
+
+    //Swipe active div to first position on Product Selection page
+    $('.PrdtPlanBox').click(function () {
+        $(this).insertBefore($(this).prevAll('.PrdtPlanBox:first-child'));
+    });
+    $('.SubPrdtTab').click(function () {
+        $(this).insertBefore($(this).prevAll('.SubPrdtTab:first-child'));
+    });
+
+    // for New Product Selection page design
+    $("#PPC1").show();
+    $(".PrdtPlanBox").click(function () {
+        $(".PrdtPlanBox").removeClass("PPBactive");
+        $(this).addClass("PPBactive");
+        $(".PrdtPlanCntntBox, .SubPrdtTabCntnt").hide();
+
+        $(".SubPrdtFeatureTabCntnt").hide();
+        $(".SPFT1, .SPFTC1").show();
+
+        if ($("#PPB1").hasClass("PPBactive")) {
+            $(".PPC1").show();
+            $(".SubPrdtFeatureTabCntnt").hide();
+            $(".SPTC1, .SPFT1, .SPFTC1").show();
+            $(".SubPrdtFeatureTab").removeClass("SPFTactive");
+            $(".SPFT1").addClass("SPFTactive");
+            $(".SubPrdtTab").removeClass("SPTactive");
+            $(".SPT1").addClass("SPTactive");
+        }
+        if ($("#PPB2").hasClass("PPBactive")) {
+            $(".PPC2").show();
+            $(".SPTC6").show();
+            $(".SubPrdtFeatureTabCntnt").hide();
+            $(".SPFT1, .SPFTC1").show();
+            $(".SubPrdtFeatureTab").removeClass("SPFTactive");
+            $(".SPFT1").addClass("SPFTactive");
+            $(".SubPrdtTab").removeClass("SPTactive");
+            $(".SPT6").addClass("SPTactive");
+        }
+        if ($("#PPB3").hasClass("PPBactive")) {
+            $(".PPC3").show();
+            $(".SubPrdtFeatureTabCntnt").hide();
+            $(".SPTC1, .SPFT1, .SPFTC1").show();
+            $(".SubPrdtFeatureTab").removeClass("SPFTactive");
+            $(".SPFT1").addClass("SPFTactive");
+            $(".SubPrdtTab").removeClass("SPTactive");
+            $(".SPT1").addClass("SPTactive");
+        }
+        if ($("#PPB4").hasClass("PPBactive")) {
+            $(".PPC4").show();
+            $(".SubPrdtFeatureTabCntnt").hide();
+            $(".SPTC1, .SPFT1, .SPFTC1").show();
+            $(".SubPrdtFeatureTab").removeClass("SPFTactive");
+            $(".SPFT1").addClass("SPFTactive");
+            $(".SubPrdtTab").removeClass("SPTactive");
+            $(".SPT1").addClass("SPTactive");
+        }
+        if ($("#PPB5").hasClass("PPBactive")) {
+            $(".PPC5").show();
+            $(".SubPrdtFeatureTabCntnt").hide();
+            $(".SPTC1, .SPFT1, .SPFTC1").show();
+            $(".SubPrdtFeatureTab").removeClass("SPFTactive");
+            $(".SPFT1").addClass("SPFTactive");
+            $(".SubPrdtTab").removeClass("SPTactive");
+            $(".SPT1").addClass("SPTactive");
+        }
+        if ($("#PPB6").hasClass("PPBactive")) {
+            $(".PPC6").show();
+            $(".SubPrdtFeatureTabCntnt").hide();
+            $(".SPTC1, .SPFT1, .SPFTC1").show();
+            $(".SubPrdtFeatureTab").removeClass("SPFTactive");
+            $(".SPFT1").addClass("SPFTactive");
+            $(".SubPrdtTab").removeClass("SPTactive");
+            $(".SPT1").addClass("SPTactive");
+        }
+    });
+
+    $(".SPTC1").show();
+    $(".SubPrdtTab").click(function () {
+
+        $(".SubPrdtTab").removeClass("SPTactive");
+        $(this).addClass("SPTactive");
+        $(".SubPrdtTabCntnt").hide();
+
+        $(".SubPrdtFeatureTab").removeClass("SPFTactive");
+        $(".SubPrdtFeatureTabCntnt").hide();
+        $(".SPFT1").addClass("SPFTactive");
+        $(".SPFTC1").show();
+
+        if ($(".SPT1").hasClass("SPTactive")) {
+            $(".SPTC1").show();
+        }
+        if ($(".SPT2").hasClass("SPTactive")) {
+            $(".SPTC2").show();
+        }
+        if ($(".SPT3").hasClass("SPTactive")) {
+            $(".SPTC3").show();
+        }
+        if ($(".SPT4").hasClass("SPTactive")) {
+            $(".SPTC4").show();
+        }
+        if ($(".SPT5").hasClass("SPTactive")) {
+            $(".SPTC5").show();
+        }
+        if ($(".SPT6").hasClass("SPTactive")) {
+            $(".SPTC6").show();
+        }
+        if ($(".SPT7").hasClass("SPTactive")) {
+            $(".SPTC7").show();
+        }
+        if ($(".SPT8").hasClass("SPTactive")) {
+            $(".SPTC8").show();
+        }
+        if ($(".SPT9").hasClass("SPTactive")) {
+            $(".SPTC9").show();
+        }
+        if ($(".SPT10").hasClass("SPTactive")) {
+            $(".SPTC10").show();
+        }
+    });
+    // for Key Feature Tabs
+    $("#SPFTC1").show();
+    $(".SubPrdtFeatureTab").on("click focus", function () {
+        $(".SubPrdtFeatureTab").removeClass("SPFTactive");
+        $(this).addClass("SPFTactive");
+        $(".SubPrdtFeatureTabCntnt").hide();
+
+        if ($(".SPFT1").hasClass("SPFTactive")) {
+            $(".SPFTC1").show();
+        }
+        if ($(".SPFT2").hasClass("SPFTactive")) {
+            $(".SPFTC2").show();
+        }
+        if ($(".SPFT3").hasClass("SPFTactive")) {
+            $(".SPFTC3").show();
+        }
+        if ($(".SPFT4").hasClass("SPFTactive")) {
+            $(".SPFTC4").show();
+        }
+    });
+
+
+
+    //for Form Filling Assistance
+    $(".FormFillApp_Popup .accordion-section-title").click(function () {
+        $(this).parent(".FormFillApp_Popup .accordion-section").toggleClass("AccordSectActive");
+        $(".FormFillApp_Popup .accordion-section-title").not(this).parent(".FormFillApp_Popup .accordion-section").removeClass("AccordSectActive");
+        $(".FormFillApp_Popup .accordion-section-title").not(this).siblings(".accordion-section-content").hide();
+        $(".FormFillApp_Popup .accordion-section-title").not(this).removeClass("active");
+        $(this).toggleClass("active");
+        $(this).siblings(".accordion-section-content").toggle();
+        e.preventDefault();
+    });
+    $("#UDTabOneEC").click(function () {
+        $("#UDTabTwoEC").removeClass("UD_TabActive");
+        $(".TabBtnCntnt .TabBtnCntntEC .TabTwoCntnt.ECTabTwoCntnt").removeClass("UDTabCntntActive");
+        $(".TabBtnCntnt .TabBtnCntntEC .TabOneCntnt.ECTabOneCntnt").addClass("UDTabCntntActive");
+        $("#UDTabOneEC").addClass("UD_TabActive");
+    });
+    $("#UDTabTwoEC").click(function () {
+        $("#UDTabOneEC").removeClass("UD_TabActive");
+        $(".TabBtnCntnt .TabBtnCntntEC .TabOneCntnt.ECTabOneCntnt").removeClass("UDTabCntntActive");
+        $(".TabBtnCntnt .TabBtnCntntEC .TabTwoCntnt.ECTabTwoCntnt").addClass("UDTabCntntActive");
+        $("#UDTabTwoEC").addClass("UD_TabActive");
+    });
+
+    //$(".FormFillApp_Popup .accordion-section-title").click(function () {
+    //    $(this).parent(".FormFillApp_Popup .accordion-section").toggleClass("AccordSectActive");
+    //    $(".FormFillApp_Popup .accordion-section-title").not(this).parent(".FormFillApp_Popup .accordion-section").removeClass("AccordSectActive");
+    //});
+
+    //for product selection on hover blue div show
+    $(".PlanBox").hover(
+        function () {
+            $(".PlanBox").not(this).removeClass('PlanBoxBlueActive');
+            $(this).toggleClass('PlanBoxBlueActive');
+            //$(".PlanBoxCntnMainDiv").toggleClass("PlanCntnScrollDiv");
+        }
+    );
+
+    //start product selection page PlanBox----
+    //$("#PlanTabCntnMainDiv1").show(); // commented by Manoj on 22-Oct-2021
+    //$("#PlanTabData1").show();
+    $(".PlanTabCntnMainDiv .PlanTabDataCntnDiv:nth-child(2)").show();
+
+    $(".PlanCntnDiv .PlanBox").click(function () {
+        $(".PlanCntnDiv .PlanBox").removeClass("PlanBoxActive");
+        $(this).addClass("PlanBoxActive");
+
+        if ($("#PlanBox1").hasClass("PlanBoxActive")) {
+            $(".PlanTabCntnMainDiv").hide();
+            $("#PlanTabCntnMainDiv1").show();
+        }
+
+        if ($("#PlanBox2").hasClass("PlanBoxActive")) {
+            $(".PlanTabCntnMainDiv").hide();
+            $("#PlanTabCntnMainDiv2").show();
+        }
+        if ($("#PlanBox3").hasClass("PlanBoxActive")) {
+            $(".PlanTabCntnMainDiv").hide();
+            $("#PlanTabCntnMainDiv3").show();
+        }
+        if ($("#PlanBox4").hasClass("PlanBoxActive")) {
+            $(".PlanTabCntnMainDiv").hide();
+            $("#PlanTabCntnMainDiv4").show();
+        }
+    });
+
+
+    $(".PlanTabContainer .PlanTabDiv").click(function () {
+        $(".PlanTabContainer .PlanTabDiv").removeClass("PlanTabDivActive");
+        $(this).addClass("PlanTabDivActive");
+
+        if ($("#PlanTab1").hasClass("PlanTabDivActive")) {
+            $(".PlanTabDataCntnDiv").hide();
+            $("#PlanTabData1").show();
+        }
+        if ($("#PlanTab2").hasClass("PlanTabDivActive")) {
+            $(".PlanTabDataCntnDiv").hide();
+            $("#PlanTabData2").show();
+        }
+        if ($("#PlanTab3").hasClass("PlanTabDivActive")) {
+            $(".PlanTabDataCntnDiv").hide();
+            $("#PlanTabData3").show();
+        }
+    });
+
+    $(".PlanBox .PlanKnowMore").click(function () {
+        $(".PlanBox .PlanKnowMore").not(this).parent(".PlanBox").removeClass("PlanBoxBlueActive");
+        $(this).parents(".PlanBox").toggleClass("PlanBoxBlueActive");
+
+        //if ($(".PlanBox .PlanKnowMore").parents(".PlanBox").hasClass("PlanBoxBlueActive")) {
+        //    $(this).parents(".PlanBoxCntnMainDiv").removeClass("PlanCntnScrollDiv");
+        //    $(this).parents("body").addClass("PlanCntnHideScroll");
+        //}
+        //else {
+        //    $(this).parents(".PlanBoxCntnMainDiv").addClass("PlanCntnScrollDiv");
+        //    $(this).parents("body").removeClass("PlanCntnHideScroll");
+        //
+        //}
+    });
+
+    //End product selection page PlanBox----
+
+    ////Added for Landing page dynamic HTML
+    //$(".SideLeft, .divFooter").each(function () {
+    //    $(this).html($(this).text());
+    //});
+
+    //for Landing Page sideleft accord
+    $(".LandingPg .SideLeftAccord .ac-container label").click(function () {
+        //$('.LandingPg .SideLeftAccord .ac-container label').not(this).siblings(".ac-small").css("height", "0");
+        $(".LandingPg .SideLeftAccord .ac-container label").not(this).removeClass("SideLQuestActive");
+        $(this).toggleClass("SideLQuestActive");
+    });
+
+
+    // jquery by NitinJ for dropdown code
+    let typingTimer; // Timer for resetting the typed characters
+    let typedCharacters = ''; // Stores the typed characters
+    $('.CustSelectInDiv').click(function (e) {
+        $('.CustSelectInDiv').not(this).removeClass('open');
+        $(this).toggleClass('open');
+    });
+    $('.CustSelectInDiv').on('focus', function (e) {
+        $('.CustSelectInDiv').not(this).removeClass('open');
+        //$(this).toggleClass('open');
+        $(this).parents('.InputField').addClass('FocusShadow');
+        $(this).parents('.TogSwitSHowHideDIv .CustSelectMainDiv').addClass('FocusShadow');
+    });
+    $('.CustSelectInDiv').on('blur', function (e) {
+        $(this).parents('.InputField').removeClass('FocusShadow');
+        $(this).parents('.TogSwitSHowHideDIv .CustSelectMainDiv').removeClass('FocusShadow');
+    });
+    $('.InputField input').on('focus', function (e) {
+        $(this).parents('.InputField').addClass('FocusShadow');
+    });
+    $('.CustSelectInDiv, .InputField input').on('blur', function () {
+        $(this).parents('.InputField').removeClass('FocusShadow');
+    });
+
+
+    $('.CustSelect-optionsDIV .CustSelect-option').click(function (e) {
+        $('.CustSelect-option').removeClass('selected');
+        $('.CustSelectInDiv').removeClass('open');
+        $(this).addClass('selected');
+    });
+
+    //console.log('test');
+    $(".CustSelectInDiv").click(function () {
+        var txt = $(this).text();
+        $(".CustSelectInDiv").removeClass("ActiveSelectDD");
+        $(this).addClass("ActiveSelectDD");
+
+        if ($(".CustSelectInDiv").hasClass("ActiveSelectDD")) {
+            //$(".ActiveSelectDD .CustSelect__trigger span").text(txt);
+            $(".ActiveSelectDD .CustSelect-optionsDIV .CustSelect-option").click(function () {
+                var txt = $(this).text();
+                //$(this).attr('rel');
+                $(".ActiveSelectDD .CustSelect__trigger span").text(txt);
+            });
+        }
+
+    });
+    $(document).on('click', function (e) {
+        if ($(e.target).closest(".CustSelect__trigger").length === 0) {
+            $(".CustSelectInDiv").removeClass("open");
+        }
+    });
+    // Handle closing dropdown when it loses focus
+    $('.CustSelectInDiv').on('blur', function () {
+        $(this).removeClass('open');
+        $(this).parents('.InputField').removeClass('FocusShadow');
+    });
+    // Handle keyboard navigation with up and down arrows
+    $(document).on('keydown', '.CustSelectInDiv', function (e) {
+
+        var $dropdown = $(this).find('.CustSelect-optionsDIV');
+        var $options = $dropdown.find('.CustSelect-option:not([style*="display: none"])');
+        var $selected = $options.filter('.selected');
+        var index = $options.index($selected);
+
+        // Enter key press
+        if (e.keyCode === 13) {
+            e.preventDefault();
+        }
+
+        // Down arrow (40)
+        if (e.keyCode === 40) {
+            e.preventDefault();
+            $(this).closest('.BrdrLabelInpDiv').addClass('inputFilled');
+            /*var nextIndex = (index + 1) % $options.length;*/
+            if (index < $options.length - 1) { // Ensure it doesn't move past the last option
+                var nextIndex = index + 1;
+                $options.removeClass('selected').eq(nextIndex).addClass('selected');
+                $options.eq(nextIndex).focus(); // Optionally focus the new option
+                updateSelectedText($(this), $options.eq(nextIndex).text());
+                /*$(this).find('.selected').trigger("click");*/
+            }
+        }
+
+        // Up arrow (38)
+        if (e.keyCode === 38) {
+            e.preventDefault();
+            $(this).closest('.BrdrLabelInpDiv').addClass('inputFilled');
+            /*var prevIndex = (index - 1 + $options.length) % $options.length;*/
+            if (index > 0) { // Ensure it doesn't move past the first option
+                var prevIndex = index - 1;
+                $options.removeClass('selected').eq(prevIndex).addClass('selected');
+                $options.eq(prevIndex).focus(); // Optionally focus the new option
+                updateSelectedText($(this), $options.eq(prevIndex).text());
+                /*$(this).find('.selected').trigger("click");*/
+            }
+        }
+
+        // Capture typed characters (A-Z and 0-9) to select options by typing
+        if ((e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 48 && e.keyCode <= 57)) { // A-Z and 0-9 key codes
+            var char;
+            if (e.keyCode >= 65 && e.keyCode <= 90) {
+                char = String.fromCharCode(e.keyCode).toLowerCase(); // Convert A-Z to lowercase
+            } else {
+                char = String.fromCharCode(e.keyCode); // Keep 0-9 as they are
+            }
+
+            typedCharacters += char;
+
+            clearTimeout(typingTimer);
+            typingTimer = setTimeout(function () {
+                typedCharacters = ''; // Reset typed characters after a pause
+            }, 1000); // 1 second delay to reset typing
+
+            // Find the option that starts with the typed characters
+            var matchingOption = $options.filter(function () {
+                return $(this).text().toLowerCase().startsWith(typedCharacters);
+            }).first();
+
+            if (matchingOption.length > 0) {
+                $options.removeClass('selected');
+                matchingOption.addClass('selected');
+                //alert($('.FocusShadow').length);
+                $('.FocusShadow').find('.CustSelect__trigger span').text(matchingOption.text());
+                $(this).closest('.BrdrLabelInpDiv').addClass('inputFilled');
+                /*matchingOption.trigger("click");*/
+                /*updateSelectedText($(this), matchingOption.text());*/
+
+
+                /*$(this).find('.selected').trigger("click");*/
+
+
+            }
+        }
+
+        var onClickAttr = $(this).find('.selected').attr("onclick");
+        eval(onClickAttr);
+        /*fnSetHiddenValue(2, '7');*/
+
+
+    });
+
+    // Helper function to update the selected text in the trigger span
+    function updateSelectedText($dropdown, text) {
+        $dropdown.find('.CustSelect__trigger span').text(text);
+    }
+
+    // to remove foucsed from Disabled elements
+    $(".MultiSelectBtn, button").attr('tabindex', '0');
+    /*$('input.DisableMe, .MultiSelectBtn .DisableMe, .DisableMe').attr('tabindex', '-1');*/
+    $('.BackBtn').attr('tabindex', '0');
+    //$('.InputDiv input, .MultiSelectBtn').on('focus', function (e) {
+    //    if ($(this).hasClass("DisableMe")) {
+    //        // Prevent focus
+    //        e.preventDefault();
+    //        /*$(this).attr('tabindex', '-1');*/
+    //        $(this).blur();
+    //    }
+    //});
+
+    // to enable focus on tab press in safari browser
+    //if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+    //    $('body').on('keydown', function (e) {
+    //        if (e.keyCode == 9) {
+    //            var $focused = $(':focus');
+    //            var inputs = $('input:not([type="hidden"]),select,textarea,button');
+    //            inputs.eq(inputs.index($focused[0]) + 1).focus();
+    //            e.stopPropagation();
+    //            e.preventDefault();
+    //            return false;
+    //        }
+    //    });
+    //}
+
+    //for focus on DownloadAcknowledgement button
+    $(".Plr.dwnlod a").on("focus", function (e) {
+        $(this).parents(".dwnlod").addClass("FocusShadow");
+    });
+    $(".Plr.dwnlod a").on("blur", function (e) {
+        $(this).parents(".dwnlod").removeClass("FocusShadow");
+    });
+
+    /*--- focus effect to accordion main div if title is focused ---*/
+    $('.accordion-section-title').on('focus', function (e) {
+        $(this).parents(".accordion-section").addClass("FocusShadow");
+    });
+    $('.accordion-section-title').on('blur', function (e) {
+        $(this).parents(".accordion-section").removeClass("FocusShadow");
+    });
+
+
+    //change tabindex from LandingPage SideLeft section
+    $(".GiveGetView_Footer .ChkBoxCntnr input").attr("tabindex", "1");
+    $(".GiveGetView_Footer .DownloadBtnSect .BTRB").attr("tabindex", "2");
+    $(".GiveGetView_Footer .DownloadBtnSect .FooterBtn ").attr("tabindex", "3");
+    $(".SideLeft > .Width100perc > .UnlockMe .row > .col a").attr("tabindex", "-1");
+    $(".SideLeft > .Width100perc > .UnlockMe .row > .col:nth-child(1) a button").attr("tabindex", "4");
+    $(".SideLeft > .Width100perc > .UnlockMe .row > .col:nth-child(2) a button").attr("tabindex", "5");
+    $(".SideLeft > .Width100perc > .UnlockMe .row > .col:nth-child(3) a button").attr("tabindex", "6");
+
+    //if ($("body").find('.DN').length !== 0) {
+    //    $(".DN").attr('tabindex', '-1');
+    //    $(".DN input").attr('tabindex', '-1');
+    //    $(".DN button").attr('tabindex', '-1');
+    //}
+
+    //to execute function on ToggleForm60 button
+    //$("#toggleForm60").on("keypress", function (e) {
+    //    debugger;
+    //    if (e.which === 13) {
+    //        $(this).attr("onclick");
+    //    }
+    //});
+
+    //to execute function on PreveiewEdit Edit(pencil) icon button
+    $(".PreEditSubHead .fa-pencil").on("keypress", function (e) {
+        if (e.which === 13) {
+            $(this).trigger("click");
+        }
+    });
+
+    $(".SideLeft a").attr('tabindex', '-1');
+    $(".GiveGetView_Footer input[type='checkbox'],.GiveGetView_Footer .DownloadBtnSect button, .SideLeft a button").attr('tabindex', '0');
+
+    //------------------ for checkbox tab key pressed ----------------//
+    // When the div is focused, check the input inside
+    $('.BrdrBoxRadioBtn .CustRadioBtn, .CustRadioBtn').on('keydown', function (e) {
+        if (e.key === "Enter") {  // Check if the Enter key is pressed
+            $(this).find('input[type="radio"]').prop('checked', true); // Add the checked attribute
+        }
+    });
+
+    // When the checkbox is focused, tick the box on Enter
+    $('.OnlyChkBoxClikLabel input[type="checkbox"], .ChkBoxCntnr input[type="checkbox"]').on('keydown', function (e) {
+        if (e.key === "Enter") {  // Check if the Enter key is pressed
+            e.preventDefault(); // Prevent default behavior, like form submission
+            // Toggle the checked property
+            $(this).prop('checked', !$(this).prop('checked'));
+            // Ensure the checkbox retains focus
+            $(this).focus();
+        }
+    });
+
+
+    // Event listener for keypress on radio buttons for Plan Name
+    $('.switch-field input[type="radio"]').on('keypress', function (e) {
+        if (e.which === 13) { // Enter key is pressed
+            var $currentRadio = $(this);
+
+            // Find the other radio button
+            var $otherRadio = $('.switch-field input[name="switch-one"]').not($currentRadio);
+
+            // Toggle checked status
+            if ($currentRadio.prop('checked')) {
+                $currentRadio.prop('checked', false);
+                $otherRadio.prop('checked', true).focus(); // Focus and check the other radio
+            } else {
+                $currentRadio.prop('checked', true);
+                $otherRadio.prop('checked', false);
+            }
+        }
+    });
+
+
+    //$(document).on('keydown', 'button', function (e) {
+    //    if (e.key === "Enter") {  // Check if the Enter key is pressed
+    //        e.preventDefault();
+    //        //$(this).trigger('onclick');
+    //        var onBtnClickAttr = $(this).attr("onclick");
+    //        eval(onBtnClickAttr);
+    //    }
+    //});
+
+
+
+
+
+    //Upload Document New page jqeury for Tab
+    $("#UDTabOne").click(function () {
+        $("#UDTabTwo").removeClass("UD_TabActive");
+        $(".TabBtnCntnt .TabTwoCntnt").removeClass("UDTabCntntActive");
+        $(".TabBtnCntnt .TabOneCntnt").addClass("UDTabCntntActive");
+        $("#UDTabOne").addClass("UD_TabActive");
+
+        //for Form Filling Assist ExistingCustomer
+        if ($("#UDTabOneEC").hasClass("UD_TabActive")) {
+            $(".TabBtnCntnt .TabBtnCntntEC .ECTabTwoCntnt.ECTabTwoCntnt").removeClass("UDTabCntntActive");
+            $(".TabBtnCntnt .TabBtnCntntEC .TabOneCntnt.ECTabOneCntnt").addClass("UDTabCntntActive");
+        }
+        if ($("#UDTabTwoEC").hasClass("UD_TabActive")) {
+            $(".TabBtnCntnt .TabBtnCntntEC .TabOneCntnt.ECTabOneCntnt").removeClass("UDTabCntntActive");
+            $(".TabBtnCntnt .TabBtnCntntEC .TabTwoCntnt.ECTabTwoCntnt").addClass("UDTabCntntActive");
+        }
+    });
+    $("#UDTabTwo").click(function () {
+        $("#UDTabOne").removeClass("UD_TabActive");
+        $(".TabBtnCntnt .TabOneCntnt").removeClass("UDTabCntntActive");
+        $(".TabBtnCntnt .TabTwoCntnt").addClass("UDTabCntntActive");
+        $("#UDTabTwo").addClass("UD_TabActive");
+
+        //for Form Filling Assist ExistingCustomer
+        if ($("#UDTabOneEC").hasClass("UD_TabActive")) {
+            $(".TabBtnCntnt .TabBtnCntntEC .ECTabTwoCntnt.ECTabTwoCntnt").removeClass("UDTabCntntActive");
+            $(".TabBtnCntnt .TabBtnCntntEC .TabOneCntnt.ECTabOneCntnt").addClass("UDTabCntntActive");
+        }
+        if ($("#UDTabTwoEC").hasClass("UD_TabActive")) {
+            $(".TabBtnCntnt .TabBtnCntntEC .TabOneCntnt.ECTabOneCntnt").removeClass("UDTabCntntActive");
+            $(".TabBtnCntnt .TabBtnCntntEC .TabTwoCntnt.ECTabTwoCntnt").addClass("UDTabCntntActive");
+        }
+    });
+
+
+
+
+
+    //FundAllocation Popup content show hide for Product Input Page
+    //$(".FundDet").click(function () {
+    //	if ($(this).data("value") == '10001') {
+    //		$(".FundDetlPopup p").addClass("DN");
+    //		$(".FundDetlPopup .modal-body p[data-value='10001']").removeClass("DN");
+    //	}
+    //	if ($(this).data("value") == '10002') {
+    //		$(".FundDetlPopup p").addClass("DN");
+    //		$(".FundDetlPopup .modal-body p[data-value='10002']").removeClass("DN");
+    //	}
+    //	if ($(this).data("value") == '10003') {
+    //		$(".FundDetlPopup p").addClass("DN");
+    //		$(".FundDetlPopup .modal-body p[data-value='10003']").removeClass("DN");
+    //	}
+    //	if ($(this).data("value") == '10004') {
+    //		$(".FundDetlPopup p").addClass("DN");
+    //		$(".FundDetlPopup .modal-body p[data-value='10004']").removeClass("DN");
+    //	}
+    //	if ($(this).data("value") == '10005') {
+    //		$(".FundDetlPopup p").addClass("DN");
+    //		$(".FundDetlPopup .modal-body p[data-value='10005']").removeClass("DN");
+    //	}
+    //	if ($(this).data("value") == '10006') {
+    //		$(".FundDetlPopup p").addClass("DN");
+    //		$(".FundDetlPopup .modal-body p[data-value='10006']").removeClass("DN");
+    //	}
+    //	if ($(this).data("value") == '10007') {
+    //		$(".FundDetlPopup p").addClass("DN");
+    //		$(".FundDetlPopup .modal-body p[data-value='10007']").removeClass("DN");
+    //	}
+    //	if ($(this).data("value") == '10008') {
+    //		$(".FundDetlPopup p").addClass("DN");
+    //		$(".FundDetlPopup .modal-body p[data-value='10008']").removeClass("DN");
+    //	}
+    //});
+
+    //Shield Show/Hide on button click
+    $(".ShldCloseBtn").hide();
+    $(".ShieldBtn button").click(function () {
+
+        if (fnValidate()) {
+            $(".ShieldCntntDiv").show();
+            $(".ShldCloseBtn").show();
+            $(".ShieldBtn").hide();
+        }
+        else {
+            alert("Please check Validation");
+        }
+    });
+    $(".ShldCloseBtn button").click(function () {
+        $(".ShieldCntntDiv").hide();
+        $(".ShldCloseBtn").hide();
+        $(".ShieldBtn").show();
+    });
+
+    //$(".ShieldBtn button").click(function () {
+    //    $(".ShieldCntntDiv").show();
+    //    $(".ShieldBtn").hide();
+    //});
+    //$(".ShieldClose").click(function () {
+    //    $(".ShieldCntntDiv").hide();
+    //    $(".ShieldBtn").show();
+    //});
+
+
+
+    // Close all other Acord Div if ShowOnlyMeAccord class is applied
+    if ($(".PersonDet .accordion-section").hasClass("ShowOnlyMeAccord")) {
+        $(".PersonDet .accordion-section .accordion-section-title").removeClass("active");
+        $(".PersonDet .accordion-section .accordion-section-content").removeClass("open");
+        $(".PersonDet .accordion-section .accordion-section-content").css("display", "none");
+        $(".ShowOnlyMeAccord .accordion-section-title").addClass("active");
+        $(".ShowOnlyMeAccord .accordion-section-content").addClass("open");
+        $(".ShowOnlyMeAccord .accordion-section-content").css("display", "block");
+    }
+
+    //Login page tab on click function
+    $(".LoginTabs .InputTab a").click(function () {
+        $(".LoginTabs .InputTab a").removeClass("active");
+        $(this).addClass("active");
+        if ($(".LoginTabs .ITab1 a").hasClass("active")) {
+            $(".LoginTabsCntn .tab-pane ").removeClass("active");
+            $(".LoginTabsCntn .SelfTab").addClass("active");
+        }
+        if ($(".LoginTabs .ITab2 a").hasClass("active")) {
+            $(".LoginTabsCntn .tab-pane ").removeClass("active");
+            $(".LoginTabsCntn .ReferenceTab ").addClass("active");
+        }
+
+
+    });
+
+    // Yes No active btn
+    $("#divShow").addClass("ToggleSwitchActive");
+    $(".ToggleSwitchBtn .switch + .TogSwitSHowHideDIv input, .ToggleSwitchBtn .switch + .TogSwitSHowHideDIv .CustSelectInDiv").attr("tabindex", "-1");
+    $(".ToggleSwitchBtn .switch.ToggleSwitchActive + .TogSwitSHowHideDIv input, .ToggleSwitchBtn .switch.ToggleSwitchActive + .TogSwitSHowHideDIv .CustSelectInDiv").attr("tabindex", "0");
+    $(".ToggleSwitchBtn .switch").click(function () {
+        $(this).toggleClass("ToggleSwitchActive");
+    });
+
+    //for Focus
+    $(".ToggleSwitchBtn .switch").on('keydown focus', function (e) {
+        if (e.key === "Enter") {
+            $(this).toggleClass("ToggleSwitchActive");
+        }
+        if ($(this).hasClass("ToggleSwitchActive")) {
+            $(this).parents(".ToggleSwitchHead, .InputDiv").find(".TogSwitSHowHideDIv input, .TogSwitSHowHideDIv .CustSelectInDiv, .TogSwitSHowHideDIv .CustRadioBtn, .TogSwitSHowHideDIv button").attr("tabindex", "0");
+        } else {
+            $(this).parents(".ToggleSwitchHead, .InputDiv").find(".TogSwitSHowHideDIv input, .TogSwitSHowHideDIv .CustSelectInDiv, .TogSwitSHowHideDIv .CustRadioBtn, .TogSwitSHowHideDIv button").attr("tabindex", "-1");
+        }
+
+        $(".ToggleSwitchDiv").removeClass("FocusShadow");
+        $(this).parents(".ToggleSwitchDiv").addClass("FocusShadow");
+
+    });
+    // Remove FocusShadow class on blur
+    $(".ToggleSwitchBtn .switch").on('blur', function () {
+        $(this).parents(".ToggleSwitchDiv").removeClass("FocusShadow");
+    });
+    $(".CustSelectInDiv, .CustRadioBtn, .InputDiv").on('focus', function () {
+        $(this).parents(".ToggleSwitchDiv").addClass("FocusShadow");
+    });
+    $(".CustSelectInDiv, .CustRadioBtn, .InputDiv").on('blur', function () {
+        $(this).parents(".ToggleSwitchDiv").removeClass("FocusShadow");
+    });
+
+    //for eIA Focus
+    $(".ToggleSwitchBtn .switch#toggleEIA").on('keydown', function (e) {
+        if ($(this).hasClass("ToggleSwitchActive")) {
+            $(this).parents(".ToggleSwitchHead, .InputDiv").find(".TogSwitSHowHideDIv input, .TogSwitSHowHideDIv .CustSelectInDiv, .TogSwitSHowHideDIv .CustRadioBtn").attr("tabindex", "-1");
+        } else {
+            $(this).parents(".ToggleSwitchHead, .InputDiv").find(".TogSwitSHowHideDIv input, .TogSwitSHowHideDIv .CustSelectInDiv, .TogSwitSHowHideDIv .CustRadioBtn").attr("tabindex", "0");
+        }
+    });
+
+    //RadioBtn under Yes No
+    $(".ToggleSwitchRadioOptDiv .CustRadioBtn").click(function () {
+        $(this).toggleClass("CustRadioBtnActive");
+    });
+
+    $(".ToggleSwitchRadioOptDiv_Enabled .CustRadioBtn").click(function () {
+        $(this).toggleClass("CustRadioBtnActive");
+    });
+
+
+
+
+    //Purchasing Policy FOr Button
+    $(".PolicyForDiv .MultiSelectBtn").click(function () {
+        $(".PolicyForDiv .MultiSelectBtn").removeClass("ActiveBtn");
+        //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+        $(this).addClass("ActiveBtn");
+
+        //if($(".spousebtn").hasClass("ActiveBtn"))
+        //{
+        //	$(".SpouseDet").show();
+        //}
+        //else {
+        //	$(".SpouseDet").hide();
+        //}
+
+    });
+
+    //GenderSelect Button
+    $(".GenderSelect .MultiSelectBtn").click(function () {
+        $(".GenderSelect .MultiSelectBtn").removeClass("ActiveBtn");
+        //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+        $(this).addClass("ActiveBtn");
+    });
+
+    //PlanOptiSelect Button
+    $(".PlanOptiSelect .MultiSelectBtn").click(function () {
+        debugger;
+        $(".PlanOptiSelect .MultiSelectBtn").removeClass("ActiveBtn");
+        //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+        $(this).addClass("ActiveBtn");
+    });
+    //SpouseDet Button
+
+    $(".SpouseGenderSelect .MultiSelectBtn").click(function () {
+        $(".SpouseGenderSelect .MultiSelectBtn").removeClass("ActiveBtn");
+        //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+        $(this).addClass("ActiveBtn");
+    });
+    //ResdStatusSelect Button
+    $(".ResdStatusSelect .MultiSelectBtn").click(function () {
+        $(".ResdStatusSelect .MultiSelectBtn").removeClass("ActiveBtn");
+        //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+        $(this).addClass("ActiveBtn");
+    });
+    //AgeBasedMeter
+    $(".AgeBasedMeter > DIV").click(function () {
+        $(".AgeBasedMeter > DIV").removeClass("AgeBaseMeterActive");
+        $(this).addClass("AgeBaseMeterActive");
+
+        $(this).attr("onclick");
+    });
+    //AgeBasedMeter also //for Image in AgeBasedMeter Investment Strategy on Landing page
+    /* $('.AgeBaseMeterActive').attr('tabindex', '-1');*/
+    $(".InvstStrategyDiv .AgeBased").on("focus keydown", function () {
+        $(this).parents(".InvstStrategyDiv").find(".AgeBaseMeterActive").attr("tabindex", "-1");
+    });
+    $(".AgeBasedMeter > DIV").on("focus keydown", function (e) {
+        //$(".AgeBasedMeter > DIV").removeClass("AgeBaseMeterActive");
+        $(this).addClass("AgeBaseMeter_FocusActive");
+        $(this).attr('tabindex', '0');
+
+        if (e.key === "Enter") {
+            $(".AgeBasedMeter > DIV").removeClass("AgeBaseMeterActive");
+            $(this).addClass("AgeBaseMeterActive");
+            $(this).removeClass("AgeBaseMeter_FocusActive");
+            $(this).trigger("onclick");
+            e.preventDefault();
+        }
+
+    });
+    $(".AgeBasedMeter > DIV").on("blur", function () {
+        $('.AgeBasedMeter > DIV').attr('tabindex', '0');
+        $(".AgeBaseMeterActive").attr('tabindex', '-1');
+    });
+    $(".AgeBasedMeter > DIV.AgeBaseMeterActive").on("blur", function () {
+        $('.AgeBasedMeter > DIV').attr('tabindex', '0');
+    });
+
+
+
+    //Personal Detail---------------------------------
+    // Button PropMariStatSelect
+    $(".PropMariStatSelect .MultiSelectBtn").click(function () {
+        $(".PropMariStatSelect .MultiSelectBtn").removeClass("ActiveBtn");
+        //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+        $(this).addClass("ActiveBtn");
+    });
+
+    // Button PropResiStatSelect
+    $(".PropResiStatSelect .MultiSelectBtn").click(function () {
+        $(".PropResiStatSelect .MultiSelectBtn").removeClass("ActiveBtn");
+        //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+        $(this).addClass("ActiveBtn");
+    });
+
+    // Button LAMariStatSelect
+    $(".LAMariStatSelect .MultiSelectBtn").click(function () {
+        $(".LAMariStatSelect .MultiSelectBtn").removeClass("ActiveBtn");
+        //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+        $(this).addClass("ActiveBtn");
+    });
+
+    // Button LAResiStatSelect
+    $(".LAResiStatSelect .MultiSelectBtn").click(function () {
+        $(".LAResiStatSelect .MultiSelectBtn").removeClass("ActiveBtn");
+        //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+        $(this).addClass("ActiveBtn");
+    });
+
+    //Nomi1GenderSelect Button
+    $(".Nomi1GenderSelect .MultiSelectBtn").click(function () {
+        $(".Nomi1GenderSelect .MultiSelectBtn").removeClass("ActiveBtn");
+        //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+        $(this).addClass("ActiveBtn");
+    });
+
+    //Nomi2GenderSelect Button
+    $(".Nomi2GenderSelect .MultiSelectBtn").click(function () {
+        $(".Nomi2GenderSelect .MultiSelectBtn").removeClass("ActiveBtn");
+        //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+        $(this).addClass("ActiveBtn");
+    });
+
+    //AppointeGenderSelect Button
+    $(".AppointeGenderSelect .MultiSelectBtn").click(function () {
+        $(".AppointeGenderSelect .MultiSelectBtn").removeClass("ActiveBtn");
+        //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+        $(this).addClass("ActiveBtn");
+    });
+
+    //Nomi1GenderSelect Button
+    $(".Nomi1GenderSelect .MultiSelectBtn").click(function () {
+        $(".Nomi1GenderSelect .MultiSelectBtn").removeClass("ActiveBtn");
+        //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+        $(this).addClass("ActiveBtn");
+    });
+
+    //Nomi2GenderSelect Button
+    $(".Nomi2GenderSelect .MultiSelectBtn").click(function () {
+        $(".Nomi2GenderSelect .MultiSelectBtn").removeClass("ActiveBtn");
+        //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+        $(this).addClass("ActiveBtn");
+    });
+
+    //Nomi2GenderSelect Button
+    $(".AppointeeGenderSelect .MultiSelectBtn").click(function () {
+        $(".AppointeeGenderSelect .MultiSelectBtn").removeClass("ActiveBtn");
+        //$(".PolicyForDiv .MultiSelectBtn").toggleClass("ActiveBtn");
+        $(this).addClass("ActiveBtn");
+    });
+
+    //--------------------------------
+
+    //for plus minus accordion
+    function close_accordion_section() {
+        jQuery('.accordion .accordion-section-title').removeClass('active');
+        jQuery('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+    }
+
+    jQuery('.accordion-section-title').click(function (e) {
+        // Grab current anchor value
+        var currentAttrValue = jQuery(this).attr('href');
+
+        if (jQuery(e.target).is('.active')) {
+            close_accordion_section();
+        } else {
+            close_accordion_section();
+
+            // Add active class to section title
+            jQuery(this).addClass('active');
+            // Open up the hidden content panel
+            jQuery('.accordion ' + currentAttrValue).slideDown(300).addClass('open');
+        }
+
+        e.preventDefault();
+    });
+
+
+    //Risk Meter
+    $(function () {
+
+        // Premium Paying Term (PPT)
+        $(".ppt_div4").click(function () {
+            $(".ppt_gaugearrow").removeClass('ppt_G2Regular_3 ppt_G2Regular_2 ppt_G2Regular_1');
+            $(".ppt_meter2 > DIV > span").removeClass('RiskActive');
+            $(".ppt_gaugearrow").addClass('ppt_G2Regular');
+            $(".ppt_meter2 .ppt_div4 span").addClass('RiskActive');
+        });
+        $(".ppt_div3").click(function () {
+            $(".ppt_gaugearrow").removeClass('ppt_G2Regular ppt_G2Regular_2 ppt_G2Regular_1');
+            $(".ppt_meter2 > DIV > span").removeClass('RiskActive');
+            $(".ppt_gaugearrow").addClass('ppt_G2Regular_3');
+            $(".ppt_meter2 .ppt_div3 span").addClass('RiskActive');
+        });
+        $(".ppt_div2").click(function () {
+            $(".ppt_gaugearrow").removeClass('ppt_G2Regular ppt_G2Regular_3 ppt_G2Regular_1');
+            $(".ppt_meter2 > DIV > span").removeClass('RiskActive');
+            $(".ppt_gaugearrow").addClass('ppt_G2Regular_2');
+            $(".ppt_meter2 .ppt_div2 span").addClass('RiskActive');
+        });
+        $(".ppt_div1").click(function () {
+            $(".ppt_gaugearrow").removeClass('ppt_G2Regular ppt_G2Regular_2 ppt_G2Regular_3');
+            $(".ppt_meter2 > DIV > span").removeClass('RiskActive');
+            $(".ppt_gaugearrow").addClass('ppt_G2Regular_1');
+            $(".ppt_meter2 .ppt_div1 span").addClass('RiskActive');
+        });
+    });
+
+    // on scroll adjust shield
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+
+        //>=, not <=
+        if (scroll >= 50) {
+            //clearHeader, not clearheader - caps H
+            $(".ShieldCntntDiv").addClass("ShieldTop");
+        }
+        else {
+            $(".ShieldCntntDiv").removeClass("ShieldTop");
+        }
+    });
+
+    //ToggleBtnRadioQuest
+    $(".ToggleBtnRadioQuest .ToggleSwitchBtn .switch").click(function () {
+        //$(".ToggleSwitchRadioOptDiv").toggleClass("DisableDiv");
+        if ($(".ToggleBtnRadioQuest .ToggleSwitchBtn .switch").hasClass("ToggleSwitchActive")) {
+            $(".ToggleSwitchRadioOptDiv").removeClass("DisableDiv");
+        }
+        else {
+            $(".ToggleSwitchRadioOptDiv").addClass("DisableDiv");
+        }
+    });
+    //for Focus
+    if ($(".ToggleSwitchRadioOptDiv").hasClass("DisableDiv")) {
+        $(this).find(".CustRadioBtn").attr("tabindex", "-1");
+    }
+    else {
+        $(".ToggleSwitchRadioOptDiv").find(".CustRadioBtn").attr("tabindex", "0");
+    }
+    //COMMENTED FOR TOGGLE OPTION ON UPLOAD DOC FOR LA/PROP ADD TOGGLE ISSUE
+    //$(".ToggleBtnRadioQuest .ToggleSwitchBtn .switch").on('keydown', function (e) {
+    //    if (e.key === "Enter") {
+    //        $(".AddSameAsId .ToggleSwitchRadioOptDiv").toggleClass("AddDisableDiv");
+
+    //    }
+    //});
+
+    $('.UploadAccTypeBtn input[name="Account"]').first().on('keydown', function (e) {
+        if (e.key === 'Tab') {
+            e.preventDefault(); // Prevent default tab behavior
+            $('.UploadAccTypeBtn input[name="Account"]').eq(1).focus(); // Focus the second radio button
+        }
+    });
+    $('.UploadAccTypeBtn input[name="Account"]').on('keydown', function (e) {
+        if (e.key === 'Enter') {
+            $('.UploadAccTypeBtn input[name="Account"]').prop('checked', false);
+            $(this).prop('checked', true);
+            $(this).focus();
+        }
+    });
+
+    //To Append SideLeftAccord DIV after SideRight
+    function myFunction(x) {
+        if (x.matches) { // If media query matches
+            $(".SideLeftAccord").appendTo(".LandingPg > .container-fluid > .row ");
+        }
+        //else {
+        //    $(".SideLeftAccord").appendTo(".LandingPg .SideLeft > DIV:first-child > DIV:nth-child(5)");
+        //}
+    }
+
+    var x = window.matchMedia("(max-width: 767px)")
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction) // Attach listener function on state changes
+
+    if ($("body").find('.DisableMe').length !== 0) {
+        $(".DisableMe").attr('readonly', true);
+        $(".DisableMe input").attr('readonly', true);
+
+        $(".DisableMe").attr('tabindex', '-1');
+        $(".DisableMe input").attr('tabindex', '-1');
+        $(".DisableMe .CustSelectInDiv").attr('tabindex', '-1');
+        $(".DisableMe input[type='checkbox']").attr('tabindex', '-1');
+        $(".DisableMe .BTRB").attr('tabindex', '-1');
+        $(".DisableMe .RedBtn").attr('tabindex', '-1');
+    }
+
+    //for Modal popup focus on open shuld not go to background on tab and reverse
+    $("#frmEFormAssi .RedButton, .modal input[value='Proceed'], .modal-body > .Width100perc button.AccordRedBtn:last-child, #CoBrandedPopUp .BlueButton, .modalfooter .AccordRedBtn:last-child, #Cookie_popup #Cookie_Continue").on("keydown", function (e) {
+        if (e.key === "Tab" && !e.shiftKey) {
+            e.preventDefault(); // Stop focus from moving forward
+        }
+    });
+
+    $(".modal-body .accordion-section:first-child .accordion-section-title, .modal .PopupBackBtn, #Form_Popup .modal-body > DIV button.BTRB, #CoBrandedPopUp .BlueButton, #Form60_Popup .BTRB, #PanCorrectPopup .modalfooter .AccordRedBtn:first-child, #Cookie_popup .modal-body > p").on("keydown", function (e) {
+        if (e.key === "Tab" && e.shiftKey) {
+            e.preventDefault(); // Stop reverse tab
+        }
+    });
+
+    //let lastFocusedElement = null;
+    //if ($(".modal[style='display: block;']").length !== 0) {
+    //    lastFocusedElement = document.activeElement;
+    //    $(".modal").focus();
+    //} else {
+    //    window.focus();
+    //    // Restore focus to the last focused element
+    //    if (lastFocusedElement) {
+    //        lastFocusedElement.focus();
+    //    }
+    //}
+
+    // Listen for 'Tab' key presses on any element with tabindex.
+    // Scroll to the div when it receives focus
+    $(".SPFT1 ").on("focus", function () {
+        // Calculate the scroll position: element's top offset minus 100 pixels
+        var scrollPosition = $(this).offset().top - 100;
+
+        // Scroll smoothly to the calculated position
+        $('html, body').animate({
+            scrollTop: scrollPosition
+        }, 500); // 500ms for smooth scrolling
+    });
+
+
+    // to prevent adding of comma to input on click
+    $("#PrdtInputBack").on("keydown", function (e) {
+
+        if (e.which === 13) {
+            //$(this).attr("onclick");
+            $(this).trigger("click");
+            e.preventDefault();
+
+        }
+    });
+    $(".SideRight .RedButton").on("keydown", function (e) {
+
+        if (e.which === 13) {
+            e.preventDefault();
+
+            //$(this).attr("onclick");
+            $(this).trigger("click");
+        }
+    });
+
+    $(".FooterBtn.RedBtn ").on("keydown", function (e) {
+
+        if (e.which === 13) {
+            e.preventDefault();
+
+            //$(this).attr("onclick");
+            $(this).trigger("click");
+        }
+    });
+
+    //for INvestment Strategy tab click adding comma and get disappeared
+    $(".InvstStrategyDiv input[type='radio'] ").on("keydown", function (e) {
+
+        if (e.which === 13) {
+            e.preventDefault();
+
+            //$(this).attr("onclick");
+            $(this).trigger("click");
+        }
+    });
+
+    // to prevent adding comma on landing input click on Term products
+    $('.BigLabelInput input').on('keydown', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Prevent form submission or other default behavior
+        }
+    });
+
+
+    //to focus TopTabBtnDiv section tabs
+    $(".TopTabBtn").attr("tabindex", "-1");
+    if ($(".TopTabBtn").hasClass("TopTabBtnCompleted")) {
+        $(".TopTabBtn.TopTabBtnCompleted").attr("tabindex", "0");
+    }
+
+
+    //if page has LockMe class 
+    if ($(".MainContainer ").hasClass("LockMe")) {
+        $(".TopTabBtn.TopTabBtnCompleted").attr("tabindex", "0");
+    }
+
+
+    //stop unwanted function calling on SideLeft buttons on landing page 
+    $('.SideLeft .BTRB').on('keydown', function (e) {
+        if (e.key === 'Enter') {
+            $(this).trigger("click");
+            e.preventDefault(); // Prevent form submission or other default behavior
+        }
+    });
+
+    //run only function attached to this button 
+    $('.AccordRedBtn').on('keydown', function (e) {
+        if (e.key === 'Enter') {
+            $(this).trigger("click");
+            e.preventDefault(); // Prevent form submission or other default behavior
+        }
+    });
+
+
+    //for PreLanding page 
+    $(".SignUp_RightSide .CustSelectInDiv").on("focus", function () {
+        $(this).addClass("BorderDD_Focus")
+    });
+    $(".SignUp_RightSide .CustSelectInDiv").on("blur", function () {
+        $(this).removeClass("BorderDD_Focus")
+    });
+
+
+    // When the div is focused, check the input inside
+    $('.ac-container > DIV > label').attr("tabindex", "0");
+    $('.ac-container > DIV > label').on('keydown', function (e) {
+        if (e.key === 'Enter') {
+            $(this).toggleClass('SideLQuestActive'); // Add the checked attribute
+        }
+    });
+
+
+
+});
+
+$(".ToggleSwitchDiv .ToggleSwitchHead").addClass("BigQuestnClass");
+if ($(".ToggleSwitchHead").find('.TogSwitSHowHideDIv').length !== 0) {
+    $('.TogSwitSHowHideDIv').parents('.ToggleSwitchHead').removeClass("BigQuestnClass");
+}
+if ($(".ToggleSwitchHead").find('.TogSwitSHowHideDIvNew').length !== 0) {
+    $('.TogSwitSHowHideDIvNew').parents('.ToggleSwitchHead').removeClass("BigQuestnClass");
+}
+if ($(".ToggleSwitchHead").find('.TogSwitSHowHideDIvNewNomi1').length !== 0) {
+    $('.TogSwitSHowHideDIvNewNomi1').parents('.ToggleSwitchHead').removeClass("BigQuestnClass");
+}
+if ($(".ToggleSwitchHead").find('.TogSwitSHowHideDIvNewNomi2').length !== 0) {
+    $('.TogSwitSHowHideDIvNewNomi2').parents('.ToggleSwitchHead').removeClass("BigQuestnClass");
+}
+if ($(".ToggleSwitchHead").find('.TogSwitSHowHideDIvNewAppo').length !== 0) {
+    $('.TogSwitSHowHideDIvNewAppo').parents('.ToggleSwitchHead').removeClass("BigQuestnClass");
+}
+
+if ($(".ToggleSwitchDiv").find('.TogSwitDIv').length !== 0) {
+    $('.TogSwitDIv').removeClass("BigQuestnClass");
+}
+
+function setLocalStorage(key, value) {
+
+    localStorage.setItem(key, value);
+
+}
+
+
+
+function getLocalStorage(key) {
+
+    return localStorage.getItem(key) || "";
+
+}
+
+
+
+function setSessionStorage(key, value) {
+
+    sessionStorage.setItem(key, value);
+
+}
+
+
+
+function getSessionStorage(key) {
+
+    return sessionStorage.getItem(key) || "";
+
+}
+
+
+
+$(window).on('beforeunload', function () {
+
+    localStorage.removeItem('ic_window_id');
+
+});
+
+
+
+function validateCallCenterTab() {
+
+    const windowId = Math.random().toString();
+
+
+    if (!window.name) {
+        window.name = windowId;
+
+        setLocalStorage('ic_window_id', window.name);
+
+        setSessionStorage('ic_window_id', window.name);
+
+        AjaxSessionLogOutCall();
+    }
+
+    const CommonWindowId = getLocalStorage('ic_window_id');
+
+    const currentWindowId = getSessionStorage('ic_window_id');
+
+
+
+    if (currentWindowId !== CommonWindowId && getLocalStorage('closePreviousTab') == "1") {
+
+        const previousTabWindowId = getLocalStorage('ic_window_id');
+
+        if (previousTabWindowId) {
+
+            localStorage.setItem('redirectTab', '1');
+
+        }
+
+    }
+
+
+
+    if (CommonWindowId !== window.name && getLocalStorage('closePreviousTab') != "1") {
+
+        setLocalStorage('ic_window_id', window.name);
+
+        setLocalStorage('closePreviousTab', "1");
+
+        console.log("window name replaced in localStorage");
+
+        clearInterval(validateCallCenterTab);
+
+    }
+
+}
+
+
+
+function checkAndRedirectPreviousTab() {
+
+    const CommonWindowId1 = getLocalStorage('ic_window_id');
+
+    const currentWindowId1 = getSessionStorage('ic_window_id');
+
+    if (getLocalStorage('redirectTab') == "1" && currentWindowId1 !== CommonWindowId1) {
+
+        window.name = "";
+        window.location.href = '../../Session/SessionTimeOutView';
+        localStorage.removeItem('redirectTab');
+    }
+
+}
+
+
+
+setInterval(checkAndRedirectPreviousTab, 1000);
+
+
+
+const callCenterInterval = setInterval(validateCallCenterTab, 3000);
+
+(function (window, $) {
+
+    function initEmailAutocomplete(selectors) {
+
+        const domains = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'live.com', 'icloud.com'];
+        let $suggestBox = null;
+        let activeIndex = -1;
+        let lastInput = null;
+
+        function ensureSuggestBox() {
+            if ($suggestBox) return $suggestBox;
+
+            $suggestBox = $('<div class="email-suggest-box" style="display:none;"></div>');
+            $('body').append($suggestBox);
+            return $suggestBox;
+        }
+
+        function getViewportRect($input) {
+            return $input[0].getBoundingClientRect();
+        }
+
+        function buildItems(localPart) {
+            return domains.map(d => ({ text: localPart + '@@' + d, domain: d }));
+        }
+
+        function measureBox($box, widthPx) {
+            const prev = {
+                display: $box.css('display'),
+                visibility: $box.css('visibility'),
+                top: $box.css('top'),
+                left: $box.css('left'),
+                width: $box.css('width')
+            };
+
+            $box.css({
+                display: 'block',
+                visibility: 'hidden',
+                top: '-9999px',
+                left: '-9999px',
+                width: widthPx + 'px'
+            });
+
+            const size = { w: $box.outerWidth(), h: $box.outerHeight() };
+            $box.css(prev);
+            return size;
+        }
+
+        function positionBox($input) {
+            const rect = getViewportRect($input);
+            const $box = ensureSuggestBox();
+
+            const desiredWidth = Math.max($input.outerWidth(), 240);
+            const width = Math.min(desiredWidth, window.innerWidth - 16);
+            const size = measureBox($box, width);
+
+            const spaceBelow = window.innerHeight - rect.bottom;
+            const spaceAbove = rect.top;
+
+            let top = (spaceBelow >= size.h + 8)
+                ? rect.bottom + 4
+                : Math.max(4, rect.top - size.h - 4);
+
+            let left = Math.min(rect.left, window.innerWidth - width - 4);
+            left = Math.max(4, left);
+
+            $box.css({
+                position: 'fixed',
+                top: top + 'px',
+                left: left + 'px',
+                width: width + 'px',
+                display: 'block',
+                visibility: 'visible'
+            });
+        }
+
+        function hideBox() {
+            if ($suggestBox) $suggestBox.hide().empty();
+            activeIndex = -1;
+            lastInput = null;
+        }
+
+        function applySelection($input, domain) {
+            const val = $input.val();
+            const atIdx = val.indexOf('@');
+            if (atIdx === -1) return;
+
+            const local = val.substring(0, atIdx);
+            $input.val(local + '@' + domain);
+            hideBox();
+        }
+
+        function renderBox($input, localPart, filter) {
+            const items = buildItems(localPart)
+                .filter(x => !filter || x.domain.startsWith(filter));
+
+            if (!items.length) {
+                hideBox();
+                return;
+            }
+
+            const $box = ensureSuggestBox();
+            $box.empty();
+            activeIndex = -1;
+
+            items.forEach(item => {
+                const $it = $(`
+                    <div class="email-suggest-item float-start w-100">
+                        <span class="local float-start">${localPart}@</span>
+                        <span class="domain float-start">${item.domain}</span>
+                    </div>
+                `);
+
+                $it.data('domain', item.domain);
+                $it.on('mousedown', e => {
+                    e.preventDefault();
+                    applySelection($input, item.domain);
+                });
+
+                $box.append($it);
+            });
+
+            lastInput = $input[0];
+            positionBox($input);
+        }
+
+        function handleInput($input) {
+            const val = $input.val();
+            const atIdx = val.indexOf('@');
+
+            if (atIdx === -1 || val.indexOf(' ') >= 0) {
+                hideBox();
+                return;
+            }
+
+            const local = val.substring(0, atIdx);
+            const domainPart = val.substring(atIdx + 1);
+            renderBox($input, local, domainPart);
+        }
+
+        function attach(selector) {
+            const $input = $(selector);
+            if (!$input.length) return;
+
+            $input
+                .on('input focus', () => handleInput($input))
+                .on('blur', () => setTimeout(hideBox, 150))
+                .on('keydown', function (e) {
+                    if (!$suggestBox || $suggestBox.is(':hidden')) return;
+
+                    const $items = $suggestBox.children('.email-suggest-item');
+                    if (!$items.length) return;
+
+                    if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        activeIndex = (activeIndex + 1) % $items.length;
+                    } else if (e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        activeIndex = (activeIndex - 1 + $items.length) % $items.length;
+                    } else if (e.key === 'Enter') {
+                        //If user presses Enter without arrow keys, this will break:$items.eq(activeIndex)
+                        e.preventDefault();
+                        const idx = activeIndex >= 0 ? activeIndex : 0;
+                        applySelection($input, $items.eq(idx).data('domain'));
+                    } else if (e.key === 'Escape') {
+                        hideBox();
+                    }
+
+                    $items.removeClass('active')
+                        .eq(activeIndex).addClass('active');
+                });
+        }
+
+        $(window).on('scroll resize', function () {
+            if ($suggestBox && !$suggestBox.is(':hidden') && lastInput) {
+                positionBox($(lastInput));
+            }
+        });
+
+        selectors.forEach(attach);
+    }
+
+    // expose globally
+    window.initEmailAutocomplete = initEmailAutocomplete;
+
+})(window, jQuery);
+
+
+
+$(document).ready(function () {
+    const iframe = document.getElementById("chatbot-iframe");
+
+    iframe.addEventListener("load", () => {
+        try {
+            const doc = iframe.contentDocument || iframe.contentWindow.document;
+            const toggleBtn = doc.querySelector("#chat-toggle");
+
+            if (!toggleBtn) {
+                console.warn("Chatbot toggle button not found inside iframe");
+                return;
+            }
+
+            // Attach click listener inside iframe
+            toggleBtn.addEventListener("click", () => {
+                if (toggleBtn.classList.contains("open")) {
+                    // Expand when open
+                    iframe.style.width = "430px";
+                    iframe.style.height = "560px";
+                } else {
+                    // Collapse when closed
+                    iframe.style.width = "85px";
+                    iframe.style.height = "85px";
+                }
+            });
+        } catch (err) {
+            console.error("Error accessing chatbot iframe:", err);
+        }
+    });
+});
+

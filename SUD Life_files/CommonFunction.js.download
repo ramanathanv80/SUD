@@ -1,0 +1,1831 @@
+﻿function Sanitize(value) {
+    var valueNew = DOMPurify.sanitize(value);
+
+    if (value == valueNew) {
+        return valueNew;
+    }
+    else {
+        location.href = '/Error/ErrorStatus';
+    }
+}
+
+function HasValue(value) {
+    return (value.length > 0) ? true : false;
+}
+
+
+function ModalPremium(premFreq, annulizedPrem) {
+    var modalPrem = 0;
+    
+    premFreq = parseInt(premFreq);
+    annulizedPrem = annulizedPrem.replaceAll(",", "");
+    if ($.isNumeric(premFreq) && $.isNumeric(annulizedPrem)) {
+        if (premFreq == 4) {
+            modalPrem = annulizedPrem * 0.0867;
+        }
+        else if (premFreq == 3) {
+            modalPrem = annulizedPrem * 0.2582;
+        }
+        else if (premFreq == 2) {
+            modalPrem = annulizedPrem * 0.5108;
+        }
+        else {
+            modalPrem = parseFloat(annulizedPrem);
+        }
+
+        if (modalPrem > 0) {
+            modalPrem = modalPrem.toFixed(2);
+        }
+    }
+
+    return modalPrem;
+}
+
+function CheckIsValidateEmail(email) {
+    var emailReg = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+    return emailReg.test(email)
+}
+
+function CheckIsNumericValues(textToCheck) {
+    try {
+        var a = parseInt(textToCheck)
+        var a = a * 2;
+        if (isNaN(a)) {
+            return false;
+        }
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+
+function fnHideShield() {
+    $("#ShieldCntntPopup").hide();
+}
+
+
+function CheckIsBlank(textToCheck) {
+    if (typeof textToCheck === 'undefined' || textToCheck === null || textToCheck.length <= 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function CheckTextStartWithNo(textToCheck) {
+    if ((textToCheck.charCodeAt(0) >= 48) && (textToCheck.charCodeAt(0) <= 57)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function CheckTextStartWithDot(textToCheck) {
+    if (textToCheck.charAt(0) == ".") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function CheckTextStartWithSpace(textToCheck) {
+    if (textToCheck.charAt(0) == " ") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function CheckTextEndWithDot(textToCheck) {
+    var res = textToCheck.split(".");
+    var index = textToCheck.indexOf(".");
+    if (index != -1 && index != res.length - 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function checkName(txtToCheck) {
+    var result = false;
+
+    if (/[a-zA-Z0-9 '.]+$/.test(txtToCheck)) {
+        result = true;
+    }
+
+    // var letters = /^[a-zA-Z'. 0-9]+$/;
+    //  if (txtToCheck.match(letters)) {
+    //     result= true;
+    //  }
+    return result;
+}
+
+function CheckTextLimit(txtToCheck, limitNum) {
+    if (txtToCheck.length > limitNum) {
+        return false;
+    }
+    return true;
+}
+
+function CheckAnnuIncome(AnnuIncomeField, limitNum) {
+    AnnuIncomeField = AnnuIncomeField.replaceAll(",", "");
+    if (parseInt(AnnuIncomeField) <= 0 || parseInt(AnnuIncomeField) > 99999999999) {
+        return false;
+    }
+    return true;
+}
+
+function CheckAnnuIncomeZero(AnnuIncomeField, limitNum) {
+    
+    AnnuIncomeField = AnnuIncomeField.replaceAll(",", "");
+    if (parseInt(AnnuIncomeField) <= 0) {
+        return false;
+    }
+    return true;
+}
+
+function CheckCharacterForNameWithDot(textToCheck) {
+    var str = textToCheck;
+
+    for (var i = 0; i < str.length; i++) {
+        var ch = str.substring(i, i + 1);
+        if ((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch) && (ch != ".")) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function CheckCharacterForNameWithDotAndSpace(textToCheck) {
+    var str = textToCheck;
+
+    for (var i = 0; i < str.length; i++) {
+        var ch = str.substring(i, i + 1);
+        if ((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch) && (ch != ".") && (ch != " ")) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function CheckAlphaNumericWithHyphen(textToCheck) {
+    var str = textToCheck;
+
+    for (var i = 0; i < str.length; i++) {
+        var ch = str.substring(i, i + 1);
+        if ((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch) && (ch != "0") && (ch != "1") && (ch != "2") && (ch != "3")
+            && (ch != "4") && (ch != "5") && (ch != "6") && (ch != "7") && (ch != "8") && (ch != "9") && (ch != "-")) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function CheckAlphaNumericWithDotAndHyphenAndSpace(textToCheck) {
+    var str = textToCheck;
+
+    for (var i = 0; i < str.length; i++) {
+        var ch = str.substring(i, i + 1);
+        if ((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch) && (ch != "0") && (ch != "1") && (ch != "2")
+            && (ch != "3") && (ch != "4") && (ch != "5") && (ch != "6") && (ch != "7") && (ch != "8")
+            && (ch != "9") && (ch != ".") && (ch != "-") && (ch != " ")) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function CheckAlphaNumeric(textToCheck) {
+    //var pwd = "asdfds1234";
+    var Exp = /((^[0-9]+[a-z]+)|(^[a-z]+[0-9]+))+[0-9a-z]+$/i;
+
+    if (!textToCheck.match(Exp))
+        return false;
+    else
+        return true;
+}
+function CheckSpecialCharInAddress(textToCheck) {
+    var str = textToCheck;
+
+    for (var i = 0; i < str.length; i++) {
+        var ch = str.substring(i, i + 1);
+        if ((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch) && (ch != "0") && (ch != "1") && (ch != "2")
+            && (ch != "3") && (ch != "4") && (ch != "5") && (ch != "6") && (ch != "7") && (ch != "8")
+            && (ch != "9") && (ch != ".") && (ch != "-") && (ch != " ") && (ch != ",") && (ch != "/")
+            && (ch != "(") && (ch != ")") && (ch != ":") && (ch != "#") && (ch != "_")) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function CheckSpecialChar(textToCheck) {
+    var str = textToCheck;
+
+    for (var i = 0; i < str.length; i++) {
+        var ch = str.substring(i, i + 1);
+        if ((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch) && (ch != "0") && (ch != "1") && (ch != "2")
+            && (ch != "3") && (ch != "4") && (ch != "5") && (ch != "6") && (ch != "7") && (ch != "8")
+            && (ch != "9")) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function CheckNumericWithHyphen(textToCheck) {
+    var str = textToCheck;
+
+    for (var i = 0; i < str.length; i++) {
+        var ch = str.substring(i, i + 1);
+        if ((ch != "0") && (ch != "1") && (ch != "2") && (ch != "3") && (ch != "4")
+            && (ch != "5") && (ch != "6") && (ch != "7") && (ch != "8") && (ch != "9") && (ch != "-")) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function CheckTextStartWithApostrophe(textToCheck) {
+    if (textToCheck.charAt(0) == "'" || textToCheck.charAt(0) == "‘" || textToCheck.charAt(0) == "’") {
+        return true
+    } else {
+        return false;
+    }
+}
+
+function CheckTextStartWithAttherate(textToCheck) {
+    if (textToCheck.charAt(0) == "@") {
+        return true
+    } else {
+        return false;
+    }
+}
+
+function CheckTextStartWithForwardSlash(textToCheck) {
+    if (textToCheck.charAt(0) == "/") {
+        return true
+    } else {
+        return false;
+    }
+}
+
+function CheckTextStartWithHyphen(textToCheck) {
+    if (textToCheck.charAt(0) == "-") {
+        return true
+    } else {
+        return false;
+    }
+}
+
+function CheckTextStartWithComma(textToCheck) {
+    if (textToCheck.charAt(0) == ",") {
+        return true
+    } else {
+        return false;
+    }
+}
+
+function CheckTextHasSpecialChar(textToCheck) {
+    var result = false;
+    for (var i = 0; i < textToCheck.length; i++) {
+        var ch = textToCheck.substring(i, i + 1);
+        if ((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch) && (ch != " ") && (ch != "'") && (ch != ".")) {
+            result = true;
+        }
+    }
+    return result;
+}
+
+function CheckTextContainsMoreThanOneDot(textToCheck) {
+    var res = textToCheck.split("");
+    for (var i = 0; i < res.length; i++) { if (res[i] == ".") { dotcount++; } }
+    if (Number(dotcount) > 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function GetTextLength(text) {
+    return text.length;
+
+}
+
+function GetNoTextLength(noText) {
+    return parseInt(noText).toString().length;
+
+}
+
+function FormatAmount(control) {
+    $(control).each(function () {
+        var tdval = "";
+        if ($(this).is("input")) {
+            tdval = $(this).val();
+        }
+        else {
+            tdval = $(this).html();
+        }
+        if ($.isNumeric(tdval)) {
+            var valueArray = tdval.split(".");
+            var value = "";
+            var decimal = "";
+            if (valueArray.length > 1) {
+                value = valueArray[0].toString();
+                decimal = "." + valueArray[1].toString();
+            }
+            else {
+                value = valueArray.toString();
+            }
+            if (value.length > 3) {
+                if ($(this).is("input")) {
+                    $(this).val(AddSeparater(value) + decimal);
+                }
+                else {
+                    $(this).html(AddSeparater(value) + decimal);
+                }
+            }
+        }
+    });
+}
+
+function CurrencyFormat(amount) {
+    var finalValue = amount;
+    if ($.isNumeric(amount)) {
+        var valueArray = amount.toString().split(".");
+        var value = "";
+        var decimal = "";
+        if (valueArray.length > 1) {
+            value = valueArray[0].toString();
+            decimal = "." + valueArray[1].toString();
+        }
+        else {
+            value = valueArray.toString();
+        }
+        if (value.length > 3) {
+            finalValue = AddSeparater(value) + decimal;
+        }
+    }
+    return finalValue;
+}
+
+function FormatAmountWithDecimal(str) {
+    $(str).each(function () {
+        var tdval = "";
+        if ($(this).is("input")) {
+            tdval = $(this).val();
+        }
+        else {
+            tdval = $(this).html();
+        }
+
+        var replaceval = tdval.replaceAll(",", ""); //tdval.replace(/,/, '');
+        var amount = parseFloat(replaceval).toFixed(2);
+        var result = DecimalAddComma(amount);
+
+        if ($(this).is("input")) {
+            $(this).val(result);
+        }
+        else {
+            $(this).html(result);
+        }
+    });
+
+}
+
+function DecimalAddComma(tdval) {
+    var result = "";
+    if ($.isNumeric(tdval)) {
+        var valueArray = tdval.split(".");
+        var value = "";
+        var decimal = "";
+        if (valueArray.length > 1) {
+            value = valueArray[0].toString();
+            decimal = "." + valueArray[1].toString();
+        }
+        else {
+            value = valueArray.toString();
+        }
+        if (value.length > 3) {
+            if ($(this).is("input")) {
+                result = (AddSeparater(value) + decimal);
+            }
+            else {
+                result = (AddSeparater(value) + decimal);
+            }
+        }
+        else {
+            result = tdval;
+        }
+    }
+    return result;
+}
+
+function AddSeparater(obj) {
+    var x = obj;
+    x = x.toString();
+    var lastThree = x.substring(x.length - 3);
+    var otherNumbers = x.substring(0, x.length - 3);
+    if (otherNumbers != '')
+        lastThree = ',' + lastThree;
+    var res = otherNumbers.replace(/\B(?=(\d{3})+(?!\d))/g, ",") + lastThree;
+    return res;
+}
+
+var ShortMonthList = new Array(12);
+ShortMonthList[0] = "Jan";
+ShortMonthList[1] = "Feb";
+ShortMonthList[2] = "Ma";
+ShortMonthList[3] = "Apr";
+ShortMonthList[4] = "May";
+ShortMonthList[5] = "Jun";
+ShortMonthList[6] = "Jul";
+ShortMonthList[7] = "Aug";
+ShortMonthList[8] = "Sept";
+ShortMonthList[9] = "Oct";
+ShortMonthList[10] = "Nov";
+ShortMonthList[11] = "Dec";
+
+function getFormattedDateIn_ddMMYYYY(strDOB) {
+
+    var s, dtDOBSplitVal;
+    dtDOBSplitVal = strDOB.split('-');
+
+    var dd = parseInt(dtDOBSplitVal[0]);
+    var mm = parseInt(dtDOBSplitVal[1]);
+    var yy = parseInt(dtDOBSplitVal[2]);
+
+    if (dd < 10) {
+        dd = "0" + dd;
+    }
+    if (mm < 10) {
+        mm = "0" + mm;
+    }
+
+
+    if (yy <= 99) {
+        yy = "19" + yy;
+    }
+
+    s = dd + "-" + mm + "-" + yy;
+
+    return s;
+}
+
+function DisplayDateFormate(dateStr) {
+    var outPut = '';
+
+    try {
+
+        if (dateStr.indexOf('T') > -1) {
+            var date = dateStr.split('T')[0];
+            if (date.indexOf('-') > -1) {
+                var dateArr = date.split('-');
+                outPut = dateArr[2] + "/" + dateArr[1] + "/" + dateArr[0];
+            }
+            else if (date.indexOf('/') > -1) {
+                var dateArr = date.split('/');
+                outPut = dateArr[2] + "/" + dateArr[1] + "/" + dateArr[0];
+            }
+        }
+        else if (dateStr.indexOf(' ') > -1) {
+            var date = dateStr.split(' ')[0];
+            if (date.indexOf('-') > -1) {
+                var dateArr = date.split('-');
+                outPut = dateArr[2] + "/" + dateArr[1] + "/" + dateArr[0];
+            }
+            else if (date.indexOf('/') > -1) {
+                var dateArr = date.split('/');
+                outPut = dateArr[2] + "/" + dateArr[1] + "/" + dateArr[0];
+            }
+        }
+    } catch (e) {
+
+    }
+    return outPut;
+}
+function parseDateNew(dateStr) {
+    console.log(dateStr);
+    var dateParts = dateStr.split("-");
+    return new Date(dateParts[2], (GetMonthMM(dateParts[1]) - 1), dateParts[0]);
+}
+
+function GetMonthMM(month) {
+    var mm = month;
+    switch (month.toLowerCase()) {
+        case "jan":
+            mm = "01";
+            break;
+        case "feb":
+            mm = "02";
+            break;
+        case "mar":
+            mm = "03";
+            break;
+        case "apr":
+            mm = "04";
+            break;
+        case "may":
+            mm = "05";
+            break;
+        case "jun":
+            mm = "06";
+            break;
+        case "jul":
+            mm = "07";
+            break;
+        case "aug":
+            mm = "08";
+            break;
+        case "sep":
+            mm = "09";
+            break;
+        case "oct":
+            mm = "10";
+            break;
+        case "nov":
+            mm = "11";
+            break;
+        case "dec":
+            mm = "12";
+            break;
+    }
+    return mm;
+}
+
+function GetMonthMMM(month) {
+    var mmm = "Jan";
+    switch (month) {
+        case "01":
+        case "1":
+            mmm = "Jan";
+            break;
+        case "02":
+        case "2":
+            mmm = "Feb";
+            break;
+        case "03":
+        case "3":
+            mmm = "Mar";
+            break;
+        case "04":
+        case "4":
+            mmm = "Apr";
+            break;
+        case "05":
+        case "5":
+            mmm = "May";
+            break;
+        case "06":
+        case "6":
+            mmm = "Jun";
+            break;
+        case "07":
+        case "7":
+            mmm = "Jul";
+            break;
+        case "08":
+        case "8":
+            mmm = "Aug";
+            break;
+        case "09":
+        case "9":
+            mmm = "Sep";
+            break;
+        case "10":
+            mmm = "Oct";
+            break;
+        case "11":
+            mmm = "Nov";
+            break;
+        case "12":
+            mmm = "Dec";
+            break;
+    }
+    return mmm;
+}
+
+function CalculateAge(currentDate, birthDate, noOfDays) {
+    var age = 0;
+
+    if (IsValidDate(currentDate) && IsValidDate(birthDate)) {
+        var dateOfBirth = parseDateNew(birthDate);
+        var anniversaryDate = parseDateNew(currentDate);
+
+        var calculateYear = anniversaryDate.getFullYear();
+        var calculateMonth = anniversaryDate.getMonth();
+        var calculateDay = anniversaryDate.getDate();
+
+        var birthYear = dateOfBirth.getFullYear();
+        var birthMonth = dateOfBirth.getMonth();
+        var birthDay = dateOfBirth.getDate();
+
+        age = calculateYear - birthYear;
+        var ageMonth = calculateMonth - birthMonth;
+        var ageDay = calculateDay - birthDay;
+
+        if (ageMonth < 0 || (ageMonth == 0 && ageDay < 0)) {
+            age = parseInt(age) - 1;
+        }
+
+        var lastBirthdayYear = calculateYear;
+        var lastBirthdayMonth = birthMonth;
+        var lastBirthdayDay = birthDay;
+
+        //To calculate Last Birth date
+        var lastBirthDate = new Date(lastBirthdayYear, lastBirthdayMonth, lastBirthdayDay);
+        if (lastBirthDate > anniversaryDate) {
+            lastBirthDate = new Date(calculateYear - 1, birthMonth, birthDay);
+        }
+
+        // To handle Age 0
+        if (lastBirthDate < dateOfBirth) {
+            lastBirthDate = new Date(birthYear, birthMonth, birthDay);
+        }
+
+        var diff = new Date(anniversaryDate - lastBirthDate);
+        // get days               
+        var days = diff / 1000 / 60 / 60 / 24;
+        if (days > noOfDays) {
+            age = age + 1;
+        }
+    }
+    return age;
+}
+
+function IsValidDate(date) {
+    if (typeof date === 'undefined' || date.length <= 0 || date.split('-').length != 3)
+        return false;
+    else
+        return true;
+}
+
+function CalculateDOB(age) {
+    var dt = new Date();
+    var month = dt.getMonth() + 1;
+    if (month.toString().length < 2) month = GetMonthMM(month.toString());
+    var day = dt.getDate();
+    if (day.toString().length < 2) day = '0' + day;
+    var year = dt.getFullYear() - age;
+    return (day + '-' + month + '-' + year);
+}
+
+$(document).ready(function () {
+    $(".dateFormate").each(function (index, dateCtrl) {
+        try {
+            var date = $(dateCtrl).text();
+            if (date.indexOf('T') > -1) {
+                date = date.split('T')[0];
+                var dtArr = date.split('-');
+                date = dtArr[2] + "-" + dtArr[1] + "-" + dtArr[0];
+            }
+            $(dateCtrl).text(date);
+        } catch (e) {
+
+        }
+    });
+
+});
+
+
+String.prototype.replaceAll = function (target, replacement) {
+    return this.split(target).join(replacement);
+};
+
+
+
+
+
+
+
+///////////////////////////////////////
+////////// JQuery Plugins /////////////
+///////////////////////////////////////
+
+(function ($) {
+    $.fn.alphanumeric = function (p) {
+        var input = $(this),
+            //add new letter (ñ, for spanish keyboard) (Felipe Pincheira A.)
+            // + french letter 
+            az = 'aàáâãäåæbcçdeèéêëfghiìíîïjklmnñoðòóôõöpqrstuùúûüvwxyýÿz',
+            options = $.extend({
+                //add new characters (¡°¬´¨) (Felipe Pincheira A.)
+                ichars: '₹!@#$%^&*()+=[]\\\';,/{}|":<>?~`.- _¡°¬´¨²€ƒ^‰¥£¢¦§¨øœŒ∑´®†ˇ¨ˆøØπ∏ßÍ∂ÎƑÏ©˚¬…ÚæÆΩ≈çÇ√◊∫ı˜µ≤≥˘÷¿¡™€£‹¢›∞ﬁ§ﬂ¶‡•°ªº–—≠±',
+                nchars: '',
+                allow: ''
+            }, p),
+            s = options.allow.split(''),
+            i = 0,
+            ch,
+            regex;
+
+        for (i; i < s.length; i++) {
+            if (options.ichars.indexOf(s[i]) != -1) {
+                s[i] = '\\' + s[i];
+            }
+        }
+
+        if (options.nocaps) {
+            options.nchars += az.toUpperCase();
+        }
+
+        if (options.allcaps) {
+            options.nchars += az;
+        }
+
+        options.allow = s.join('|');
+
+        regex = new RegExp(options.allow, 'gi');
+        ch = (options.ichars + options.nchars).replace(regex, '');
+
+        input
+            .keypress(function (e) {
+
+                var key = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+
+                if (ch.indexOf(key) != -1 && !e.ctrlKey) {
+                    e.preventDefault();
+                }
+
+            })
+            .blur(function () {
+
+                var value = input.val(),
+                    j = 0;
+
+                for (j; j < value.length; j++) {
+                    if (ch.indexOf(value[j]) != -1) {
+                        input.val('');
+                        return false;
+                    }
+                }
+                return false;
+            });
+
+        return input;
+
+    };
+
+    $.fn.numeric = function (p) {
+        //add new letter (ñ, for spanish keyboard) (Felipe Pincheira A.)
+        var az = 'aàáâãäåæbcçdeèéêëfghiìíîïjklmnñoðòóôõöpqrstuùúûüvwxyýÿz',
+            aZ = az.toUpperCase();
+
+        return this.each(function () {
+            $(this).alphanumeric($.extend({ nchars: az + aZ }, p));
+        });
+    };
+
+    $.fn.alpha = function (p) {
+        var nm = '1234567890';
+        return this.each(function () {
+            $(this).alphanumeric($.extend({ nchars: nm }, p));
+        });
+    };
+
+})(jQuery);
+
+
+$(document).ready(function () {
+    $('.disableCopyPest').bind('copy paste cut',
+        function (e) {
+            e.preventDefault();
+        });
+
+    // Manual Datepicker Code - Added by Manoj on 04-Sept-2023
+    //#region CUSTOM FUNCTIONS FOR DATEPICKERS
+    Date.prototype.toShortDateString = function () {
+        
+        return (this.getMonth() + 1) + "-" + this.getDate() + "-" + this.getFullYear();
+    }
+
+    function isTextSelected(input) {
+        
+        if (typeof input.selectionStart == "number" && input.selectionStart != input.value.length && input.selectionStart != input.selectionEnd) {
+            return true;
+        } else if (typeof document.selection != "undefined") {
+            input.focus();
+            return document.selection.createRange().text == input.value;
+        }
+        return false;
+    }
+    function isNumber(e) {
+        
+        var allowedKeys = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105];
+        if ($.inArray(e.keyCode, allowedKeys) != -1 && !e.originalEvent.shiftKey) {
+            return true;
+        }
+        return false;
+    }
+    function isBackspace(keyCode) {
+        
+        var allowedKeys = [8];
+        if ($.inArray(keyCode, allowedKeys) != -1) {
+            return true;
+        }
+        return false;
+    }
+    function isAllowedKey(keyCode) {
+        
+        var allowedKeys = [9, 13, 16, 37, 38, 39, 40];//191,111]; // 189
+        if ($.inArray(keyCode, allowedKeys) != -1) {
+            return true;
+        }
+        return false;
+    }
+
+    $.fn.extend({
+        allowDDMMYYYY: function (validate) {
+            $(this).keydown(function (e) {
+                var that = this;
+                if (!isNumber(e) && !isBackspace(e.keyCode) && !isAllowedKey(e.keyCode)) {
+                    e.preventDefault();
+                } else if ($(that).val().length == 10 && !isBackspace(e.keyCode) && !isAllowedKey(e.keyCode)) {// && !isTextSelected(e.target) && isNumber(e.keyCode)) {
+                    if (!isTextSelected(e.target) && isNumber(e))
+                        e.preventDefault();
+                }
+            });
+            $(this).keyup(function (e) {
+                var that = this;
+                var value = $(that).val();
+                if (e.keyCode != 8 && !isAllowedKey(e.keyCode)) {
+                    switch (value.length) {
+                        case 1:
+                            value = checkValue(value, 31);
+                            if (value.length == 2) {
+                                $(that).val(value + "-");
+                            }
+                            break;
+                        case 2:
+                            $(that).val(value + "-");
+                            break;
+                        case 3:
+                            if (value.indexOf("-") == -1) {
+                                $(that).val(value.substr(0, 2) + "-" + value.substr(2, 1));
+                            }
+                            break;
+                        case 4:
+                            if (value.substr(0, 3).indexOf("-") == -1) {
+                                $(that).val(value.substr(0, 2) + "-" + value.substr(2, 2));
+                            }
+                            else {
+                                var chkValue = checkValue(value.substr(3, 1), 12);
+                                if (chkValue.length == 2) {
+                                    $(that).val(value.substr(0, 3) + chkValue + "-");
+                                }
+                            }
+                            break;
+                        case 5:
+                            if (e.target.selectionStart == value.length) {
+                                if (e.target.selectionStart != 1) {
+                                    $(that).val(value + "-");
+                                }
+                            }
+                            break;
+                        case 6:
+                            if (e.target.selectionStart == value.length) {
+                                if (value.substr(5).indexOf("-") == -1) {
+                                    $(that).val(value.substr(0, 5) + "-" + value.substr(5, 1));
+                                }
+                            } else if (e.target.selectionStart == 2) {
+                                $(that).val(value.substr(0, 2) + "-" + value.substr(2))
+                                e.target.selectionStart = 3;
+                                e.target.selectionEnd = 3;
+                            }
+                            break;
+                        case 7:
+                            if (e.target.selectionStart == value.length) {
+                                if (value.substr(5).indexOf("-") == -1) {
+                                    $(that).val(value.substr(0, 6) + "-" + value.substr(5, 2));
+                                }
+                            } else if (e.target.selectionStart == 2) {
+                                $(that).val(value.substr(0, 2) + "-" + value.substr(2));
+                                e.target.selectionStart = 3;
+                                e.target.selectionEnd = 3;
+                            }
+                            break;
+                        case 9:
+                            if (value.substr(3, 5).indexOf("-") == -1) {
+                                $(that).val(value.substr(0, 5) + "-" + value.substr(5))
+                            } else if (value.substr(0, 3).indexOf("-") == -1) {
+                                $(that).val(value.substr(0, 2) + "-" + value.substr(2))
+                            }
+                            break;
+                        //IF THE LENGTH IS 10 (ONKEYUP) THEN CALL VALIDATION ON OTHER DATEPICKER ELEMENTS.
+                        case 10:
+                            if (!isTextSelected(e.target)) {
+                                //validate();
+                            }
+                            break;
+                    }
+                }
+            });
+        }
+    });
+
+    //#endregion
+});
+
+// Region - Manual Date Check
+function Validateddmmyyyy(value) {
+
+    if (value.length != 10)
+        return false;
+
+    if (isValidDateRegEx(value)) {
+        var tempDate = value.replaceAll('-', '/');
+        var dateParts = tempDate.split("/");
+        var date = new Date(dateParts[2], (dateParts[1] - 1), dateParts[0]);
+        if (date.getDate() == dateParts[0] && date.getMonth() == (dateParts[1] - 1) && date.getFullYear() == dateParts[2])
+            return true;
+        else
+            return false;
+    }
+    else {
+        return false;
+    }
+}
+
+function ValidateDateFormat(value) {
+
+    if (value.length != 10)
+        return false;
+
+    var dateArray = [];
+    var tempDate = value.replaceAll('-', '/');
+    dateArray = tempDate.split("/");
+    if (dateArray.length != 3)
+        return false;
+    else if (dateArray[0].length != 2 || dateArray[1].length != 2 || dateArray[2].length != 4)
+        return false;
+    else
+        return true;
+}
+
+function isValidDateRegEx(dateString) {
+    var regEx = /^\d{2}([./-])\d{2}\1\d{4}$/;
+    return dateString.match(regEx) != null;
+}
+
+function checkValue(str, max) {
+    if (str.charAt(0) !== '0' || str == '00') {
+        var num = parseInt(str);
+        if (isNaN(num) || num <= 0 || num > max) num = 1;
+        str = num > parseInt(max.toString().charAt(0))
+            && num.toString().length == 1 ? '0' + num : num.toString();
+    };
+    return str;
+};
+// EndRegion
+
+$(document).keypress(function (event) {
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if (keycode == 13) //Handle return key
+    {
+        $("input").blur();
+    }
+});
+
+$(document).on("focus", ".amounttextbox", function (event) {
+    if (this.value.length > 0) {
+        var value = this.value;
+        this.value = value.replaceAll(",", "");
+    }
+});
+
+$(document).on("focus", ".digittextbox", function (event) {
+    var target = event.target;
+    target.selectionStart = target.selectionEnd = target.value.length;
+});
+
+
+//////////////////***Financial Need Analysis***/////////////////////////////////////
+
+function GetFutureValue(inflRate, noOfYears, currValue, isCompounding) {
+
+    var fv = 0.0;
+
+    if (currValue != 0) {
+
+        var perYearRate = inflRate / 100;
+
+        if (isCompounding == 'True') {
+
+            for (var i = 0; i <= noOfYears; i++) {
+
+                fv += currValue * Math.pow((1 + (perYearRate)), i);
+            }
+        }
+        else {
+            fv = currValue * Math.pow((1 + (perYearRate)), noOfYears);
+        }
+        fv = Math.round(fv);
+    }
+    return fv;
+}
+function GetFutureValueWithoutRounding(inflRate, noOfYears, currValue, isCompounding) {
+
+    var fv = 0.0;
+
+    if (currValue != 0) {
+
+        var perYearRate = inflRate / 100;
+
+        if (isCompounding == 'True') {
+
+            for (var i = 0; i <= noOfYears; i++) {
+
+                fv += currValue * Math.pow((1 + (perYearRate)), i);
+            }
+        }
+        else {
+            fv = currValue * Math.pow((1 + (perYearRate)), noOfYears);
+        }
+        //fv = Math.round(fv);
+    }
+    return fv;
+}
+
+function GetPresentValue(rate, noOfYears, payment, futureValue, dueAt) {
+    var pv1 = 0, dTemp = 0, dTemp2 = 0, dtemp3 = 0;
+    if (rate == 0) {
+        return (-futureValue - (payment * noOfYears));
+    }
+    if (dueAt != 0) {
+        dTemp = 1 + rate;
+    }
+    else {
+        dTemp = 1;
+    }
+    dtemp3 = 1 + rate;
+    dTemp2 = Math.pow(dtemp3, noOfYears);
+    pv1 = Math.round((-(futureValue + payment * dTemp * ((dTemp2 - 1) / rate)) / dTemp2));
+    return pv1;
+
+}
+
+function GetPresentValueOfFuturePayOuts(noOfPayouts, inflRate, growRate, amountNeeded) {
+    var hlvValue = 0;
+    var diff = growRate - inflRate;
+    if (diff != 0) {
+        var rate = diff / 100;
+        var amount = -1 * amountNeeded;
+        hlvValue = GetPresentValue(rate, noOfPayouts, amount, 0, 1);
+    } else {
+        var amount = noOfPayouts * amountNeeded;
+        hlvValue = amount;
+    }
+
+    return hlvValue;
+}
+
+function GetFutureValueByLumsumInvestment(amountToInvest, growRate, noOfYears) {
+    var perYearRate = parseFloat(growRate) / 100;
+    return Math.round(amountToInvest * Math.pow(1 + parseFloat(perYearRate), parseInt(noOfYears)));
+}
+
+function GetFutureValueByYearlyInvestment(rate, nper, pmt, pv, type) {
+    rate = rate / 100;
+    var pow = Math.pow(1 + rate, nper),
+        fv;
+    if (rate) {
+        fv = (pmt * (1 + rate * type) * (1 - pow) / rate) - pv * pow;
+    } else {
+        fv = -1 * (pv + pmt * nper);
+    }
+    return fv.toFixed();
+}
+
+function SetPieChat(differencePercentage) {
+    var imageSource = "";
+    if (differencePercentage > 0 && differencePercentage <= 10) {
+        imageSource = "images/PG_10.png";
+    }
+    else if (differencePercentage > 10 && differencePercentage <= 20) {
+        imageSource = "images/PG_20.png";
+    }
+    else if (differencePercentage > 20 && differencePercentage <= 30) {
+        imageSource = "images/PG_30.png";
+    }
+    else if (differencePercentage > 30 && differencePercentage <= 40) {
+        imageSource = "images/PG_40.png";
+    }
+    else if (differencePercentage > 40 && differencePercentage <= 50) {
+        imageSource = "images/PG_50.png";
+    }
+    else if (differencePercentage > 50 && differencePercentage <= 60) {
+        imageSource = "images/PG_60.png";
+    }
+    else if (differencePercentage > 60 && differencePercentage <= 70) {
+        imageSource = "images/PG_70.png";
+    }
+    else if (differencePercentage > 70 && differencePercentage <= 80) {
+        imageSource = "images/PG_80.png";
+    }
+    else if (differencePercentage > 80 && differencePercentage < 100) {
+        imageSource = "images/PG_90.png";
+    }
+    else {
+        imageSource = "images/PG_gap_100.png";
+    }
+    $("#imgPieChart").attr("src", imageSource);
+}
+//////////////////***Financial Need Analysis***/////////////////////////////////////
+
+//////////////////***App Form***/////////////////////////////////////
+function floatLabelNew(inputType) {
+    $(inputType).each(function () {
+        var $this = $(this);
+        // on focus add cladd active to label
+        $this.focus(function () {
+            $this.next().addClass("active");
+        });
+        //on blur check field and remove class if needed
+        $this.blur(function () {
+            if ($this.val() === '' || $this.val() === 'blank') {
+                $this.next().removeClass("active");
+            }
+            if ($this.is('[readonly]')) {
+                $this.next().addClass("active");
+            }
+            if ($this[0].selectedIndex < 0) {
+                $this.next().removeClass("active");
+            }
+        });
+
+        if ($this.is('[readonly]') || $this[0].selectedIndex > 0) {
+            $this.next().addClass("active");
+            $this.parent().siblings("label").addClass("active");
+        }
+    });
+}
+
+function CheckIsNumberOdd(val) {
+    var number = parseInt(val);
+    if (number % 2 == 0) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+//////////////////***App Form***/////////////////////////////////////
+
+function fnShowLoader(strMessage) {
+    //$("#divLoader").show();
+
+    if (strMessage == "") {
+        strMessage = "Loading Please Wait...";
+    }
+    getloader();
+    $('#divLoaderText').html(strMessage);
+    //$('#divLoaderText').html().toLowerCase();    
+    $('#divLoader').show();
+}
+
+//window.onbeforeunload = () => {
+//    sessionStorage.removeItem('loaderContent');
+//}
+function getloader() {
+    
+    var val = window.location.href.split('/');
+    var Urls = '';
+
+  
+    if (window.location.href.split('/')[3] == "Landing" && window.location.href.split('/')[4] != "LandingPageProceed") {
+        ////localStorage.clear();
+        localStorage.removeItem("loaderContent")
+        Urls = 'Landing'
+    }
+    else {
+
+        Urls = window.location.href.split('/')[3];
+    }
+
+    if (localStorage.getItem("loaderContent") == "" || localStorage.getItem("loaderContent") == null) {
+        var ur = window.location.href.split(Urls)[0];
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/json;",
+            url: window.location.href.split(Urls)[0] + '/ProductSelection/GetLoaderContent',
+            success: function (result) {
+                //var loaderCount = null;
+                if (sessionStorage.getItem("loadCount") == "" || sessionStorage.getItem("loadCount") == null) {
+                    sessionStorage.setItem("loadCount", "0");
+                }
+
+                var loaderCount = sessionStorage.getItem("loadCount");
+                const loader = result.loaderList;//["Claim Settlement Ratio of 99.04%<sup>~</sup>", "Loading...", "Loading Please Wait..."];
+                //for (var i = 0; i < loader.length; i++) {
+                //    if (i == parseInt(loaderCount)) {
+                $("#Loaderc").attr("data-text", loader[loaderCount].LoaderContent);
+                $("#Loaderc").html(loader[loaderCount].LoaderContent);
+                //    }
+                //}
+
+                let loadCon = JSON.stringify(loader)
+                localStorage.setItem("loaderContent", loadCon)
+
+                loaderCount = parseInt(loaderCount) + 1;
+                sessionStorage.setItem("loadCount", loaderCount);
+                if (loaderCount >= loader.length) {
+                    sessionStorage.setItem("loadCount", "");
+                }
+
+
+            },
+            error: function (err) {
+
+                if (err.status == 401) {
+                    location.href = window.location.href.split('HealthCombo')[0] + 'Session/SessionTimeOut';
+                }
+                else {
+                    console.log(err);
+                }
+
+            }
+        });
+    }
+    else {
+        
+        if (sessionStorage.getItem("loadCount") == "" || sessionStorage.getItem("loadCount") == null) {
+            sessionStorage.setItem("loadCount", "0");
+        }
+
+        var loaderCount = sessionStorage.getItem("loadCount");
+        let retString = localStorage.getItem("loaderContent");//["Claim Settlement Ratio of 99.04%<sup>~</sup>", "Loading...", "Loading Please Wait..."];
+        let loader = JSON.parse(retString);
+        //for (var i = 0; i < loader.length; i++) {
+        //    if (i == parseInt(loaderCount)) {
+        $("#Loaderc").attr("data-text", loader[loaderCount].LoaderContent);
+        $("#Loaderc").html(loader[loaderCount].LoaderContent);
+        //    }
+        //}
+
+        //let loadCon = JSON.stringify(loader)
+        //localStorage.setItem("loaderContent", loadCon)
+
+        loaderCount = parseInt(loaderCount) + 1;
+        sessionStorage.setItem("loadCount", loaderCount);
+        if (loaderCount >= loader.length) {
+            sessionStorage.setItem("loadCount", "");
+        }
+    }
+
+
+}
+
+function fnHideLoader() {
+    $("#divLoader").hide();
+    $('#divLoaderText').html("Loading Please Wait...");
+}
+
+function fnCalAge(strDOB, ObjAge) {
+    var now = new Date();
+    var s, bD;
+    bD = strDOB.split('-');
+
+    var dd = bD[0];
+    var mm = bD[1];
+    var yy = bD[2];
+
+    if ((mm != "0") && (dd != "0") && (yy != "0")) {
+        if (bD.length == 3) {
+            var born = new Date(bD[2], bD[1] * 1 - 1, bD[0]);
+            var years = Math.floor((now.getTime() - born.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
+            $(ObjAge).val(years);
+        }
+    }
+}
+
+function fnValidatePAN(Obj, txtMsg) {
+    // if (Obj == null) Obj = window.event.srcElement;
+
+    
+    if (Obj != "") {
+        var ObjVal = Obj;
+        var panPat = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+        var code = /([C,P,H,F,A,T,B,L,J,G])/;
+        var code_chk = ObjVal.substring(3, 4);
+        if (ObjVal.search(panPat) == -1) {
+            //alert("Invalid Pan No");
+            txtMsg = txtMsg + " Invalid";
+            //  Obj.focus();
+            return txtMsg;
+        }
+        txtMsg = "";
+        return txtMsg;
+    }
+    else {
+        txtMsg = txtMsg + " cannot be blank";
+        return txtMsg;
+    }
+}
+
+$(document).on("focus", ".amounttextbox", function (event) {
+    if (this.value.length > 0) {
+        var value = this.value;
+        this.value = value.replaceAll(",", "");
+    }
+});
+
+function fnIndianFormatAmount(obj, textval) {
+    var x = obj;
+    x = x.toString();
+    var lastThree = x.substring(x.length - 3);
+    var otherNumbers = x.substring(0, x.length - 3);
+    if (otherNumbers != '')
+        lastThree = ',' + lastThree;
+    var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+    //alert(res);
+    $("#" + textval).val(res);
+}
+
+function fnFormatAmount(control) {
+    $(control).each(function () {
+        var tdval = "";
+        if ($(this).is("input")) {
+            tdval = $(this).val();
+        }
+        else {
+            tdval = $(this).html();
+        }
+        if ($.isNumeric(tdval)) {
+            var valueArray = tdval.split(".");
+            var value = "";
+            var decimal = "";
+            if (valueArray.length > 1) {
+                value = valueArray[0].toString();
+                decimal = "." + valueArray[1].toString();
+            }
+            else {
+                value = valueArray.toString();
+            }
+            if (value.length > 3) {
+                if ($(this).is("input")) {
+                    $(this).val(AddSeparater(value) + decimal);
+                }
+                else {
+                    $(this).html(AddSeparater(value) + decimal);
+                }
+            }
+        }
+    });
+}
+
+function fnFormatAmountWithDecimal(str) {
+    $(str).each(function () {
+        var tdval = "";
+        if ($(this).is("input")) {
+            tdval = $(this).val();
+        }
+        else {
+            tdval = $(this).html();
+        }
+
+        var replaceval = tdval.replaceAll(",", ""); //tdval.replace(/,/, '');
+        var amount = parseFloat(replaceval).toFixed(2);
+        var result = DecimalAddComma(amount);
+
+        if ($(this).is("input")) {
+            $(this).val(result);
+        }
+        else {
+            $(this).html(result);
+        }
+    });
+}
+
+function fnLogoClick() {
+    var result = confirm("Do You want to exit the journey of securing the future?");
+    if (result == true) {
+        fnShowLoader("");
+        window.location.href = "/PreLanding/Logout";
+    }
+}
+
+function fnGoHome(objVal) {
+    //alert("objVal: " + objVal);
+    var result = confirm("Do You want to exit the journey of securing the future?");
+    if (result == true) {
+        fnShowLoader("");
+        //window.open("https://www.sudlife.in/");
+        if (objVal == "/Landing/LandingPage" || objVal == "/ProductSelection/ProductSelectionPage" || objVal == "/ProductSelection/ProductSelectionPageEdit") {
+            window.location.href = "/PreLanding/Logout";
+        }
+        else {
+            window.location.href = "/Landing/LandingPage";
+        }
+    }
+}
+
+function fnShowHomePopup() {
+    $('#mpHome').show();
+}
+
+function fnHomeYes(objVal) {
+    fnShowLoader("");
+    //if (objVal == "/Landing/LandingPage" || objVal == "/ProductSelection/ProductSelectionPage" || objVal == "/") {
+    window.location.href = "/PreLanding/Logout";
+    //}
+    //else {
+    //    window.location.href = "/Landing/LandingPage";
+    //}
+}
+
+function fnHomeNo() {
+    $('#mpHome').hide();
+}
+
+function fnTalkToExpert() {
+    alert("We will get back to you shortly.");
+}
+
+function fnIsValidMobile(objVal) {
+    var indexsl = objVal.slice(0, 1);
+    if (indexsl == "6" || indexsl == "7" || indexsl == "8" || indexsl == "9") {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function fnComingSoon() {
+    alert("Coming Soon!!");
+}
+
+// Added code on 13-Oct-2021 (Manoj)
+
+function CheckAlphabets(txtBox, txtMsg) {
+    var str = txtBox.value;
+    if (str == "") {
+        txtMsg = txtMsg + " cannot be blank";
+        //txtBox.focus();
+        return txtMsg;
+    }
+
+    if ((str.charCodeAt(0) >= 48) && (str.charCodeAt(0) <= 57)) {
+        txtMsg = txtMsg + " cannot start with number";
+        return txtMsg;
+    }
+
+    if (str.charAt(0) == " ") {
+        // txtMsg = txtMsg + " cannot start with space";
+        txtMsg = "Space is not allowed in the " + txtMsg;
+        return txtMsg;
+    }
+
+    if (str.charAt(0) == ".") {
+        txtMsg = txtMsg + " cannot start with dot";
+        return txtMsg;
+    }
+
+    if (str.charAt(0) == "'") {
+        txtMsg = txtMsg + " cannot start with apostrophe";
+        return txtMsg;
+    }
+
+    for (var i = 0; i < str.length; i++) {
+        var ch = str.substring(i, i + 1);
+        if ((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch) && (ch != " ") && (ch != "'") && (ch != ".")) {
+            //if ((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch) && (ch != "'") && (ch != ".")) {
+            //txtBox.focus();
+            txtMsg = "you have entered invalid characters!"
+            return txtMsg;
+        }
+
+    }
+    txtMsg = "";
+    return txtMsg;
+}
+
+function CheckAlphabetsNumeric(txtBox, txtMsg) {
+
+    //1st argument is the Textbox object
+
+    //2nd argument is the Message to be shown
+
+    //remaining are the arguments for special characters which are to be included
+
+    var str = txtBox.value;
+
+    var i, j;
+
+    if (str == "") {
+
+        //txtMsg = txtMsg + " cannot be Blank .\nPlease Re-Enter Your Data."
+        txtMsg = txtMsg + " cannot be Blank .\nPlease Enter Your Data."
+        return txtMsg;
+
+    }
+
+    if (str.charAt(0) == " ") {
+
+        txtMsg = "Space is not allowed in the " + txtMsg;
+
+        return txtMsg;
+
+    }
+
+    if (str.indexOf("'") >= 0 || str.indexOf('"') >= 0) {
+
+        //txtMsg = txtMsg + " Cannot Contain Quots.Please Re-Enter Your Data."
+        txtMsg = txtMsg + " Cannot Contain Quots.Please Enter Your Data."
+        return txtMsg;
+
+    }
+
+    //to create the condition fo special characters to be included
+
+    var args = CheckAlphabetsNumeric.arguments
+
+    var strCondition, ch
+
+    strCondition = "";
+
+    ch = "";
+
+    for (i = 0; i < str.length; i++) {
+
+        ch = str.substring(i, i + 1);
+
+
+
+        for (j = 2; j < args.length; j++) {
+
+            if (strCondition == "") {
+
+                strCondition = '("' + ch + '" != "' + args[j] + '")'
+
+            }
+
+            else {
+
+                strCondition = strCondition + ' && ("' + ch + '" != "' + args[j] + '")'
+
+            }
+
+        }
+
+
+
+        //&& (ch!="7") && (ch!="8") && (ch!="9")
+
+        //alert(((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch)) + " " + ch)
+
+        //alert((ch < "0" || "9" < ch) + " " + ch)
+
+        //alert(eval(strCondition) + " " + ch)
+
+
+
+        strCondition = (strCondition != "") ? "(" + strCondition + ")" : "('" + ch + "' != null)"
+
+        //            alert(strCondition)
+
+        if (((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch)) && (ch < "0" || "9" < ch) && eval(strCondition)) {
+
+            if (ch == " ") {
+                txtMsg = "Space is not allowed in the " + txtMsg;
+            }
+            else {
+                txtMsg = "You have entered invalid character.Special character are not allowed."
+            }
+            return txtMsg;
+
+        }
+
+        strCondition = "";
+
+    }
+
+    return "";
+}
+
+function CheckNumericValue(txtBox, txtMsg) {
+    //1st argument is the Textbox object
+    //2nd argument is the Message to be shown
+    //remaining are the arguments for special characters which are to be included
+
+    var str = txtBox.value;
+    var i, j;
+
+    if (str == "") {
+        txtMsg = txtMsg + " cannot be Blank"
+        return txtMsg;
+    }
+
+    if (str.charAt(0) == " ") {
+        txtMsg = txtMsg + " cannot start with blank"
+        return txtMsg;
+    }
+
+    if (str.indexOf("'") >= 0 || str.indexOf('"') >= 0) {
+        txtMsg = txtMsg + " mobile no. cannot contain quots"
+        return txtMsg;
+    }
+
+    //to create the condition fo special characters to be included
+    var args = CheckNumericValue.arguments
+    var strCondition, ch
+
+    strCondition = "";
+    ch = "";
+
+    for (i = 0; i < str.length; i++) {
+        ch = str.substring(i, i + 1);
+
+        for (j = 2; j < args.length; j++) {
+            if (strCondition == "") {
+                strCondition = '("' + ch + '" != "' + args[j] + '")'
+            }
+            else {
+                strCondition = strCondition + ' && ("' + ch + '" != "' + args[j] + '")'
+            }
+        }
+
+        //&& (ch!="7") && (ch!="8") && (ch!="9")
+        //alert(((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch)) + " " + ch)
+        //alert((ch < "0" || "9" < ch) + " " + ch)
+        //alert(eval(strCondition) + " " + ch)
+
+        strCondition = (strCondition != "") ? "(" + strCondition + ")" : "('" + ch + "' != null)"
+        //	alert(strCondition)
+        if ((ch < "0" || "9" < ch) && eval(strCondition)) {
+            txtMsg = "please enter numeric values only in " + txtMsg
+            return txtMsg;
+        }
+        strCondition = "";
+    }
+    return "";
+}
+
+// End
+
+function fnGoToBNMenu(objVal, isPayNowSele) {
+    if (objVal == "1") {
+        fnShowLoader("");
+        window.location.href = "/AppForm/PersonalDetails";
+    }
+    else if (objVal == "2") {
+        fnShowLoader("");
+        window.location.href = "/HealthDetails/HealthDetails";
+    }
+    else if (objVal == "3") {
+        fnShowLoader("");
+        if (isPayNowSele == "1") {
+            window.location.href = "/PaymentDetails/PaymentNowPage";
+        }
+        else {
+            window.location.href = "/PaymentDetails/PaymentPage";
+        }
+    }
+    else if (objVal == "4") {
+        fnShowLoader("");
+        window.location.href = "/UploadDoc/UploadDocuments";
+    }
+}
+
+//=========Start - SessionLogOutOnBrowserClose=======================
+//window.addEventListener("onunload", function (e) {
+//    //window.onunload = function () {
+//        AjaxSessionLogOutCall();
+//    //}
+//    for (var i = 0; i < 500000000; i++) { }
+//    return undefined;
+//});
+
+//window.onunload = function (e) {
+//// Firefox || IE 
+//e = e || window.event;
+
+//var y = e.pageY || e.clientY;
+
+//if (y < 0) {
+//    console.info("Window closed");
+//}
+//else {
+//    console.info("Window refreshed");
+//}
+
+//if (performance.navigation.type == performance.navigation.TYPE_NAVIGATE) {
+//    console.info("This page is TYPE_NAVIGATE");
+//}
+//else if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+//    console.info("This page is TYPE_RELOAD");
+//}
+//else if (performance.navigation.type == performance.navigation.TYPE_BACK_FORWARD) {
+//    console.info("This page is TYPE_BACK_FORWARD");
+//}
+//else {
+//    console.info("This page is not reloaded");
+//    ////AjaxSessionLogOutCall();
+//    ////for (var i = 0; i < 500000000; i++) { }
+//}
+
+//}
+
+//window.addEventListener("beforeunload", function (e) {
+//    // *********** perform database operation here  
+//    const pageAccessedByReload = (
+//        (window.performance.navigation && window.performance.navigation.type === 1) ||
+//        window.performance
+//            .getEntriesByType('navigation')
+//            .map((nav) => nav.type)
+//            .includes('reload')
+//    );
+//    console.info("pageAccessedByReload: " + pageAccessedByReload);    
+
+//    //check for Navigation Timing API support
+//    if (window.performance) {
+//        console.info("window.performance works fine on this browser");
+//    }
+
+//    console.info(performance.navigation.type);
+
+//    if (performance.navigation.type == performance.navigation.TYPE_NAVIGATE) {
+//        console.info("This page is TYPE_NAVIGATE");
+//    }
+//    else if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+//        console.info("This page is TYPE_RELOAD");
+//    }
+//    else if (performance.navigation.type == performance.navigation.TYPE_BACK_FORWARD) {
+//        console.info("This page is TYPE_BACK_FORWARD");
+//    }
+//    else {
+//        console.info("This page is not reloaded");
+//        ////AjaxSessionLogOutCall();
+//        ////for (var i = 0; i < 500000000; i++) { }
+//    }
+
+//if (pageAccessedByReload == true) {
+//    AjaxSessionLogOutCall();    
+//    for (var i = 0; i < 500000000; i++) { }
+//}
+
+// before closing the browser ************** //            
+// added the delay otherwise database operation will not work
+//for (var i = 0; i < 500000000; i++) { }
+//return undefined;
+//});
+
+function AjaxSessionLogOutCall() {
+    //var OtpInfo = { EmailID: strEmailId, OTP: strOTP };
+    $.ajax({
+        type: "POST",
+        contentType: "application/json;",
+        url: "/PreLanding/SessionLogOutOnBrowserClose",
+        //async: false,
+        //dataType: "json",
+        //headers: {
+        //    'RequestVerificationToken': TokenHeaderValue()
+        //},
+        success: function (res) {
+            //alert("res: " + res);
+            if (res == "") {
+            }
+            else {
+            }
+        },
+        error: function (err) {
+        }
+    });
+}
+
+//window.addEventListener('beforeunload', function (e) {
+//    e.preventDefault();
+//    e.returnValue = '';
+//    alert("hi");
+//});
+
+//===============================
+var isClose = false;
+//this code will handle the F5 or Ctrl+F5 key
+//need to handle more cases like ctrl+R whose codes are not listed here
+document.onkeydown = fnCheckPressKeycode
+function fnCheckPressKeycode(e) {
+    var keycode;
+    if (window.event)
+        keycode = window.event.keyCode;
+    else if (e)
+        keycode = e.which;
+    if (keycode == 116 || keycode == 13) {
+        isClose = true;
+    }
+}
+
+function fnClickOnBodyfunction() {
+    isClose = true;
+}
+
+function fnDoUnload() {
+    if (!isClose) {
+        //alert('window is closing');
+        AjaxSessionLogOutCall();
+        for (var i = 0; i < 500000000; i++) { }
+        return undefined;
+    }
+}
+//=========End - SessionLogOutOnBrowserClose=======================
